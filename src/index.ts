@@ -46,13 +46,9 @@ export default class Type {
 	 */
 	public constructor(value: unknown, parent: Type | null = null) {
 		this.value = value;
-
 		this.is = Type.resolve(value);
-
 		this.parent = parent;
-
 		this.childKeys = new Map();
-
 		this.childValues = new Map();
 	}
 

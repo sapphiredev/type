@@ -10,6 +10,7 @@ ava('string', (test): void => {
 });
 
 ava('boolean', (test): void => {
+	test.plan(2);
 	test.is(new Type(true).toString(), 'boolean');
 
 	test.is(new Type(false).toString(), 'boolean');
