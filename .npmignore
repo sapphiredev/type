@@ -1,0 +1,20 @@
+# .npmignore
+.get/
+node_modules/
+test/
+docs/
+scripts/
+src/
+.docstrap.json
+.eslintrc.json
+tslint.json
+.travis.yml
+appveyor.yml
+tsconfig.json
+package-lock.json
+README.md
+yarn.lock
+coverage/
+.nyc_output/
+azure-pipelines.yml
+test-results.xml
