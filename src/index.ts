@@ -6,6 +6,7 @@ const { getPromiseDetails } = process.binding('util');
  * The class for deep checking Types
  */
 export default class Type {
+
 	/**
 	 * The value to generate a deep Type of
 	 * @type {*}
