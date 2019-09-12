@@ -26,4 +26,17 @@ ava('symbols with strings', (test): void => {
 	test.not(new Type(sym1), new Type(sym2));
 });
 
+ava('promise.resolve', (test): void => {
+	const returnsPromise = () => Promise.resolve(undefined);
+
+	test.is(new Type(returnsPromise()).toString(), 'Promise<void>');
+})
+
+ava('promise(setTimeout)', (test): void => {
+	const returnsPromise = () => new Promise((resolve): void => { setTimeout(resolve, 5000) });
+
+
+	test.is(new Type(returnsPromise()).toString(), 'Promise');
+})
+
 // ... others
