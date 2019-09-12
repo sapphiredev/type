@@ -1,0 +1,49 @@
+{
+  "name": "@klasa/type",
+  "version": "0.0.1",
+  "description": "javascript type detection.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "build": "tsc",
+    "test": "ava",
+    "test:lint": "eslint --ext ts src test",
+    "test:coverage": "yarn coverage && nyc check-coverage --lines 90 --functions 90 --branches 90",
+    "lint": "eslint --fix --ext ts src test"
+  },
+  "keywords": [],
+  "author": "dirigeants",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.3",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "ava": "^2.3.0",
+    "eslint": "^6.3.0",
+    "eslint-config-klasa": "dirigeants/klasa-lint",
+    "source-map-support": "^0.5.13",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bdistin/fs-nextra"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "files": [
+      "test/**/*.ts",
+      "!test/lib"
+    ],
+    "require": [
+      "ts-node/register",
+      "source-map-support/register"
+    ]
+  }
+}
