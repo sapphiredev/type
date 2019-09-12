@@ -27,16 +27,16 @@ ava('symbols with strings', (test): void => {
 });
 
 ava('promise.resolve', (test): void => {
-	const returnsPromise = () => Promise.resolve(undefined);
+	const returnsPromise = (): Promise<void> => Promise.resolve(undefined);
 
 	test.is(new Type(returnsPromise()).toString(), 'Promise<void>');
-})
+});
 
 ava('promise(setTimeout)', (test): void => {
-	const returnsPromise = () => new Promise((resolve): void => { setTimeout(resolve, 5000) });
+	const returnsPromise = (): Promise<void> => new Promise((resolve): void => { setTimeout(resolve, 5000); });
 
 
 	test.is(new Type(returnsPromise()).toString(), 'Promise');
-})
+});
 
 // ... others
