@@ -69,7 +69,7 @@ export default class Type {
 	 */
 	public toString(): string {
 		this.check();
-		return this.is + this.childTypes;
+		return `${this.is}${this.childTypes}`;
 	}
 
 	/**
