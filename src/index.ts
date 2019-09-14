@@ -5,44 +5,39 @@ const { getPromiseDetails } = process.binding('util');
 /**
  * The class for deep checking Types
  */
-export default class Type {
+export class Type {
 
 	/**
 	 * The value to generate a deep Type of
-	 * @type {*}
 	 */
 	public value: unknown;
 
 	/**
 	 * The shallow type of this
-	 * @type {string}
 	 */
 	public is: string;
 
 	/**
 	 * The parent of this Type
-	 * @type {?Type}
 	 * @private
 	 */
 	private parent: Type | null;
 
 	/**
 	 * The child keys of this Type
-	 * @type {Map<string, Type>}
 	 * @private
 	 */
 	private childKeys: Map<string, Type>;
 
 	/**
 	 * The child values of this Type
-	 * @type {Map<string, Type>}
 	 * @private
 	 */
 	private childValues: Map<string, Type>;
 
 	/**
-	 * @param {*} value The value to generate a deep Type of
-	 * @param {Type} [parent=null] The parent value used in recursion
+	 * @param value The value to generate a deep Type of
+	 * @param [parent=null] The parent value used in recursion
 	 */
 	public constructor(value: unknown, parent: Type | null = null) {
 		this.value = value;
@@ -54,7 +49,6 @@ export default class Type {
 
 	/**
 	 * The type string for the children of this Type
-	 * @type {string}
 	 * @readonly
 	 * @private
 	 */
@@ -86,7 +80,6 @@ export default class Type {
 
 	/**
 	 * Checks if the value of this Type is a circular reference to any parent.
-	 * @returns {boolean}
 	 * @private
 	 */
 	private isCircular(): boolean {
@@ -96,7 +89,7 @@ export default class Type {
 
 	/**
 	 * The subtype to create based on this.value's sub value.
-	 * @param {*} value The sub value
+	 * @param value The sub value
 	 * @private
 	 */
 	private addValue(value: unknown): void {
@@ -106,7 +99,7 @@ export default class Type {
 
 	/**
 	 * The subtype to create based on this.value's entries.
-	 * @param {Array<string, *>} entry The entry
+	 * @param entry The entry
 	 * @private
 	 */
 	private addEntry([key, value]: [string, unknown]): void {
@@ -132,7 +125,7 @@ export default class Type {
 
 	/**
 	 * Resolves the type name that defines the input.
-	 * @param {*} value The value to get the type name of
+	 * @param value The value to get the type name of
 	 * @returns {string}
 	 */
 	public static resolve(value: any): string {
@@ -147,8 +140,7 @@ export default class Type {
 
 	/**
 	 * Joins the list of child types.
-	 * @param {Map<string, Type>} values The values to list
-	 * @returns {string}
+	 * @param values The values to list
 	 * @private
 	 */
 	private static list(values: Map<string, Type>): string {
