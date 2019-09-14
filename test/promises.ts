@@ -1,8 +1,8 @@
 import ava from 'ava';
-import { Type } from '../dist'
+import { Type } from '../dist';
 
 ava('promise(resolve)', (test): void => {
-    const resolves = () => Promise.resolve(null);
+	const resolves = (): Promise<null> => Promise.resolve(null);
 
-    test.is(new Type(resolves()).toString(), 'Promise<null>');
+	test.is(new Type(resolves()).toString(), 'Promise<null>');
 });
