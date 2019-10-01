@@ -19,25 +19,22 @@ export class Type {
 
 	/**
 	 * The parent of this Type
-	 * @private
 	 */
 	private parent: Type | null;
 
 	/**
 	 * The child keys of this Type
-	 * @private
 	 */
 	private childKeys: Map<string, Type>;
 
 	/**
 	 * The child values of this Type
-	 * @private
 	 */
 	private childValues: Map<string, Type>;
 
 	/**
 	 * @param value The value to generate a deep Type of
-	 * @param [parent=null] The parent value used in recursion
+	 * @param parent The parent value used in recursion
 	 */
 	public constructor(value: unknown, parent: Type | null = null) {
 		this.value = value;
@@ -49,8 +46,6 @@ export class Type {
 
 	/**
 	 * The type string for the children of this Type
-	 * @readonly
-	 * @private
 	 */
 	private get childTypes(): string {
 		if (!this.childValues.size) return '';
@@ -59,7 +54,6 @@ export class Type {
 
 	/**
 	 * The full type string generated.
-	 * @returns {string}
 	 */
 	public toString(): string {
 		this.check();
@@ -68,8 +62,6 @@ export class Type {
 
 	/**
 	 * Walks the linked list backwards, for checking circulars.
-	 * @yields {?Type}
-	 * @private
 	 */
 	private *parents(): Generator<Type, void, unknown> {
 		// eslint-disable-next-line @typescript-eslint/no-this-alias, no-cond-assign, consistent-this
@@ -80,7 +72,6 @@ export class Type {
 
 	/**
 	 * Checks if the value of this Type is a circular reference to any parent.
-	 * @private
 	 */
 	private isCircular(): boolean {
 		for (const parent of this.parents()) if (parent.value === this.value) return true;
@@ -90,7 +81,6 @@ export class Type {
 	/**
 	 * The subtype to create based on this.value's sub value.
 	 * @param value The sub value
-	 * @private
 	 */
 	private addValue(value: unknown): void {
 		const child = new Type(value, this);
@@ -100,7 +90,6 @@ export class Type {
 	/**
 	 * The subtype to create based on this.value's entries.
 	 * @param entry The entry
-	 * @private
 	 */
 	private addEntry([key, value]: [string, unknown]): void {
 		const child = new Type(key, this);
@@ -110,7 +99,6 @@ export class Type {
 
 	/**
 	 * Get the deep type name that defines the input.
-	 * @private
 	 */
 	private check(): void {
 		if (Object.isFrozen(this)) return;
@@ -126,7 +114,6 @@ export class Type {
 	/**
 	 * Resolves the type name that defines the input.
 	 * @param value The value to get the type name of
-	 * @returns {string}
 	 */
 	public static resolve(value: any): string {
 		const type = typeof value;
@@ -141,7 +128,6 @@ export class Type {
 	/**
 	 * Joins the list of child types.
 	 * @param values The values to list
-	 * @private
 	 */
 	private static list(values: Map<string, Type>): string {
 		return values.has('any') ? 'any' : [...values.values()].sort().join(' | ');
