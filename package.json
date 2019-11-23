@@ -18,7 +18,7 @@
     "node": ">=10.1.0"
   },
   "devDependencies": {
-    "@types/node": "^12.12.11",
+    "@types/node": "^12.12.12",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
     "ava": "^2.3.0",
