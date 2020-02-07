@@ -6,5 +6,5 @@ ava('function(empty)', (test): void => {
 });
 
 ava('function(two args)', (test): void => {
-	test.is(new Type((a, b) => a + b).toString(), 'Function(2-arity)');
+	test.is(new Type((a: number, b: number): number => a + b).toString(), 'Function(2-arity)');
 });

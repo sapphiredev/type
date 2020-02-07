@@ -15,6 +15,8 @@ ava('array(different-type)', (test): void => {
 
 ava('array circular', (test): void => {
 	const a = [[]];
+	// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+	// @ts-ignore
 	a[0].push(a);
 	test.is(new Type(a).toString(), 'Array<Array<[Circular:Array]>>');
 });
