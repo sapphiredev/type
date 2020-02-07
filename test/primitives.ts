@@ -26,3 +26,7 @@ ava('symbols with strings', (test): void => {
 
 	test.not(new Type(sym1), new Type(sym2));
 });
+
+ava('undefined', (test): void => {
+	test.is(new Type(undefined).toString(), 'void');
+});
