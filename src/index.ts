@@ -118,7 +118,7 @@ export class Type {
 	public static resolve(value: any): string {
 		const type = typeof value;
 		switch (type) {
-			case 'object': return value === null ? 'null' : (value.constructor && value.constructor.name) || 'any';
+			case 'object': return value === null ? 'null' : value.constructor && value.constructor.name;
 			case 'function': return `${value.constructor.name}(${value.length}-arity)`;
 			case 'undefined': return 'void';
 			default: return type;
@@ -130,7 +130,7 @@ export class Type {
 	 * @param values The values to list
 	 */
 	private static list(values: Map<string, Type>): string {
-		return values.has('any') ? 'any' : [...values.values()].sort().join(' | ');
+		return values.has('Object') ? 'any' : [...values.values()].sort().join(' | ');
 	}
 
 }
