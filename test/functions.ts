@@ -2,6 +2,7 @@ import ava from 'ava';
 import { Type } from '../dist';
 
 ava('function(empty)', (test): void => {
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	test.is(new Type(() => {}).toString(), 'Function(0-arity)');
 });
 
