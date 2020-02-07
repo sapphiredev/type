@@ -14,8 +14,7 @@ ava('array(different-type)', (test): void => {
 });
 
 ava('array circular', (test): void => {
-	const a = [];
-	const b = [a];
-	a.push(b);
+	const a = [[]];
+	a[0].push(a);
 	test.is(new Type(a).toString(), 'Array<Array<[Circular:Array]>>');
 });
