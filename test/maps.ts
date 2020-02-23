@@ -14,5 +14,5 @@ ava('map(different-type)', (test): void => {
 });
 
 ava('map(mixed with object)', (test): void => {
-	test.is(new Type(new Map<string, any>([['text', 'abc'], ['digit', 1], ['object', {}]])).toString(), 'Map<string, any>');
+	test.is(new Type(new Map<string, any>([['text', 'abc'], ['digit', 1], ['object', {}]])).toString(), 'Map<string, Record | number | string>');
 });
