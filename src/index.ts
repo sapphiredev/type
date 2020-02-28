@@ -101,14 +101,19 @@ export class Type {
 	 * Get the deep type name that defines the input.
 	 */
 	private check(): void {
+		/* eslint-disable curly */
 		if (Object.isFrozen(this)) return;
 		const promise = getPromiseDetails(this.value);
 		if (typeof this.value === 'object' && this.isCircular()) this.is = `[Circular:${this.is}]`;
 		else if (promise && promise[0]) this.addValue(promise[1]);
 		else if (this.value instanceof Map) for (const entry of this.value) this.addEntry(entry);
 		else if (Array.isArray(this.value) || this.value instanceof Set) for (const value of this.value) this.addValue(value);
-		else if (this.is === 'Object') this.is = 'any';
+		else if (this.is === 'Object') {
+			this.is = 'Record';
+			for (const entry of Object.entries(this.value as Record<PropertyKey, unknown>)) this.addEntry(entry);
+		}
 		Object.freeze(this);
+		/* eslint-enable curly */
 	}
 
 	/**
@@ -130,7 +135,7 @@ export class Type {
 	 * @param values The values to list
 	 */
 	private static list(values: Map<string, Type>): string {
-		return values.has('Object') ? 'any' : [...values.values()].sort().join(' | ');
+		return [...values.values()].sort().join(' | ');
 	}
 
 }
