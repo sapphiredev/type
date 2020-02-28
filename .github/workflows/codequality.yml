@@ -95,7 +95,7 @@ jobs:
         git clone $REPO out -b $TARGET_BRANCH
         yarn docs
         echo -e "\n# Move the generated docs to the newly-checked-out repo, to be committed and pushed"
-        mv docs.json out/${TARGET_BRANCH//\//_}.json
+        mv docs.json out/${CURRENT_BRANCH//\//_}.json
         echo -e "\n# Commit and push"
         cd out
         git add --all .
