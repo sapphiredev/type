@@ -110,8 +110,7 @@ export class Type {
 		else if (proxy && proxy[0]) {
 			this.is = 'Proxy';
 			this.addValue(proxy[0]);
-		}
-		else if (this.value instanceof Map) for (const entry of this.value) this.addEntry(entry);
+		} else if (this.value instanceof Map) for (const entry of this.value) this.addEntry(entry);
 		else if (Array.isArray(this.value) || this.value instanceof Set) for (const value of this.value) this.addValue(value);
 		else if (this.is === 'Object') {
 			this.is = 'Record';
