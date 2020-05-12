@@ -14,22 +14,23 @@ jobs:
     steps:
     - name: Checkout Project
       uses: actions/checkout@v1
-    - name: Use Node.js 10
+    - name: Use Node.js 12
       uses: actions/setup-node@v1
       with:
-        node-version: 10
+        node-version: 12
     - name: Restore CI Cache
       uses: actions/cache@v1
       with:
         path: node_modules
-        key: ${{ runner.os }}-10-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
     - name: Install Dependencies
       run: yarn
     - name: Run ESLint
-      uses: discordjs/action-eslint@v1
+      uses: icrawl/action-eslint@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+        custom-glob: '{src,test}/**/*'
         job-name: ESLint
 
   Typescript:
@@ -38,15 +39,15 @@ jobs:
     steps:
     - name: Checkout Project
       uses: actions/checkout@v1
-    - name: Use Node.js 10
+    - name: Use Node.js 12
       uses: actions/setup-node@v1
       with:
-        node-version: 10
+        node-version: 12
     - name: Restore CI Cache
       uses: actions/cache@v1
       with:
         path: node_modules
-        key: ${{ runner.os }}-10-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
     - name: Install Dependencies
       run: yarn
     - name: Run TSC
@@ -62,15 +63,15 @@ jobs:
     steps:
     - name: Checkout Project
       uses: actions/checkout@v1
-    - name: Use Node.js 10
+    - name: Use Node.js 12
       uses: actions/setup-node@v1
       with:
-        node-version: 10
+        node-version: 12
     - name: Restore CI Cache
       uses: actions/cache@v1
       with:
         path: node_modules
-        key: ${{ runner.os }}-10-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
     - name: Install Dependencies
       run: yarn
     - name: Test Docs
