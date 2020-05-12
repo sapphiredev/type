@@ -26,10 +26,11 @@ jobs:
     - name: Install Dependencies
       run: yarn
     - name: Run ESLint
-      uses: discordjs/action-eslint@v1
+      uses: icrawl/action-eslint@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+        custom-glob: '{src,test}/**/*'
         job-name: ESLint
 
   Typescript:
