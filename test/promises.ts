@@ -1,5 +1,5 @@
 import ava from 'ava';
-import { Type } from '../dist';
+import { Type } from '../src';
 
 ava('promise(resolve)', (test): void => {
 	const resolves = (): Promise<null> => Promise.resolve(null);

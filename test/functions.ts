@@ -1,5 +1,5 @@
 import ava from 'ava';
-import { Type } from '../dist';
+import { Type } from '../src';
 
 ava('function(empty)', (test): void => {
 	// eslint-disable-next-line @typescript-eslint/no-empty-function

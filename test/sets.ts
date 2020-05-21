@@ -1,5 +1,5 @@
 import ava from 'ava';
-import { Type } from '../dist';
+import { Type } from '../src';
 
 ava('set(empty)', (test): void => {
 	test.is(new Type(new Set()).toString(), 'Set');
