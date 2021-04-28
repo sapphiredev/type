@@ -1,9 +1,12 @@
 {
 	"targets": [
 		{
-			"target_name": "addon",
-			"sources": ["lib/addon.cc"],
-			"include_dirs": ["<!(node -e \"require('nan')\")"]
+			"target_name": "<(module_name)",
+			"sources": [ "lib/type.cc" ],
+			"include_dirs": [
+				"<!(node -e \"require('nan')\")"
+			],
+			"product_dir": "<(module_path)",
 		}
 	]
 }

@@ -9,6 +9,7 @@ docs/
 # Ignore tsc dist folder
 dist/
 build/
+prebuild/
 
 # Ignore JavaScript files
 **/*.js

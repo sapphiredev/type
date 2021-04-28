@@ -1,12 +1,12 @@
 import bindings from 'bindings';
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
-declare namespace Addon {
+declare namespace Internals {
 	export function getPromiseDetails(thing: any): number[];
 	export function getProxyDetails(thing: any): number[];
 }
 
-export const { getPromiseDetails, getProxyDetails }: typeof Addon = bindings('addon');
+export const { getPromiseDetails, getProxyDetails }: typeof Internals = bindings('type');
 
 /**
  * The class for deep checking Types

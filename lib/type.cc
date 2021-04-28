@@ -47,4 +47,4 @@ void Init(v8::Local<v8::Object> exports) {
 	exports->Set(context, Nan::New("getProxyDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetProxyDetails)->GetFunction(context).ToLocalChecked());
 }
 
-NODE_MODULE(addon, Init);
+NODE_MODULE(type, Init);

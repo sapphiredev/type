@@ -1,0 +1,59 @@
+name: Release Updater
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  Prebuilds:
+    name: Publish Binaries
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: [12, 14, 15, 16]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Use Node.js v${{ matrix.node }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Restore CI Cache
+        uses: actions/cache@v2.1.5
+        with:
+          path: node_modules
+          key: ${{ matrix.os }}-${{ matrix.node_version }}-${{ hashFiles(matrix.os == 'windows-latest' && '**\yarn.lock' || '**/yarn.lock') }}
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+      - name: Build and package code
+        run: |
+          yarn gyp:configure
+          yarn gyp:rebuild
+          yarn gyp:package
+      - name: Publish Binaries
+        uses: icrawl/action-artifact@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path: 'build/stage/**/*.tar.gz'
+
+  Crosspost:
+    name: Release Crosspost
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse release name
+        id: get_release_name
+        run: echo ::set-output name=release_name::${RELEASE:-$TAG}
+        env:
+          RELEASE: ${{ github.event.release.name }}
+          TAG: ${{ github.event.release.tag_name }}
+
+      - name: Send Release Message
+        id: crosspost_action
+        uses: kludge-cs/gitcord-release-changelogger@v3.0.0
+        with:
+          webhook-url: ${{ secrets.RELEASE_WEBHOOK }}
+          release-body: ${{ github.event.release.body }}
+          release-name: ${{ steps.get_release_name.outputs.release_name }}
