@@ -72,10 +72,9 @@ export class Type {
 	/**
 	 * Walks the linked list backwards, for checking circulars.
 	 */
-	private *parents(): Generator<Type, void, unknown> {
-		// eslint-disable-next-line @typescript-eslint/no-this-alias, no-cond-assign, consistent-this
+	private *parents(): IterableIterator<Type> {
+		// eslint-disable-next-line @typescript-eslint/no-this-alias, consistent-this
 		let current: Type | null = this;
-		// eslint-disable-next-line no-cond-assign
 		while ((current = current.parent)) yield current;
 	}
 
