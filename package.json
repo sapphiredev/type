@@ -13,6 +13,7 @@
 	},
 	"homepage": "https://github.com/sapphire-community/utilities/tree/main/packages/type",
 	"scripts": {
+		"clean": "node scripts/clean.mjs",
 		"docs": "typedoc",
 		"pretest": "run-s gyp:configure gyp:build",
 		"test": "jest",
