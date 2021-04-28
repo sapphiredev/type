@@ -1,4 +1,5 @@
-import bindings from 'bindings';
+import { find } from '@mapbox/node-pre-gyp';
+import { resolve, join } from 'path';
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Internals {
@@ -6,7 +7,12 @@ declare namespace Internals {
 	export function getProxyDetails(thing: any): number[];
 }
 
-export const { getPromiseDetails, getProxyDetails }: typeof Internals = bindings('type');
+const bindingPath = find(resolve(join(__dirname, '..', './package.json')));
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const binding = require(bindingPath);
+
+export const { getPromiseDetails, getProxyDetails }: typeof Internals = binding;
 
 /**
  * The class for deep checking Types
@@ -108,6 +114,7 @@ export class Type {
 
 		const promise = getPromiseDetails(this.value);
 		const proxy = getProxyDetails(this.value);
+
 		if (typeof this.value === 'object' && this.isCircular()) {
 			this.is = `[Circular:${this.is}]`;
 		} else if (promise && promise[0]) {
