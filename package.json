@@ -48,7 +48,6 @@
 		"@sapphire/eslint-config": "^3.1.1",
 		"@sapphire/prettier-config": "^1.1.0",
 		"@sapphire/ts-config": "^2.2.0",
-		"@types/bindings": "^1.5.0",
 		"@types/jest": "^26.0.23",
 		"@types/node": "^15.0.1",
 		"cz-conventional-changelog": "^3.3.0",
