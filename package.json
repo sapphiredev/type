@@ -33,7 +33,7 @@
 	"binary": {
 		"module_name": "type",
 		"module_path": "./prebuild/{module_name}-{node_abi}-{platform}-{arch}-{libc}/",
-		"host": "https://github.com/sapphire-project/type/releases/download/",
+		"host": "https://github.com/sapphire-community/type/releases/download/",
 		"remote_path": "v{version}",
 		"package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}-{libc}.tar.gz",
 		"pkg_path": "."
