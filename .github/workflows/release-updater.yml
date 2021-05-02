@@ -36,7 +36,7 @@ jobs:
           path: build/stage/**/*.tar.gz
           if-no-files-found: error
       - name: Publish Binaries
-        uses: icrawl/action-artifact@v1
+        uses: icrawl/action-artifact@v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
