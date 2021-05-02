@@ -6,13 +6,11 @@
 
 **A type detection utility for JavaScript.**
 
-[![GitHub](https://img.shields.io/github/license/sapphire-community/utilities)](https://github.com/sapphire-community/utilities/blob/main/LICENSE.md)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/sapphire-community/utilities.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sapphire-community/utilities/alerts/)
-[![Language grade: JavaScript/TypeScript](https://img.shields.io/lgtm/grade/javascript/g/sapphire-community/utilities.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sapphire-community/utilities/context:javascript)
-[![Coverage Status](https://coveralls.io/repos/github/sapphire-community/utilities/badge.svg?branch=main)](https://coveralls.io/github/sapphire-community/utilities?branch=main)
+[![GitHub](https://img.shields.io/github/license/sapphiredev/utilities)](https://github.com/sapphiredev/utilities/blob/main/LICENSE.md)
+[![codecov](https://codecov.io/gh/sapphiredev/type/branch/main/graph/badge.svg?token=hygqPZuVZ5)](https://codecov.io/gh/sapphiredev/type)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/@sapphire/type?logo=webpack&style=flat-square)](https://bundlephobia.com/result?p=@sapphire/type)
 [![npm](https://img.shields.io/npm/v/@sapphire/type?color=crimson&logo=npm&style=flat-square)](https://www.npmjs.com/package/@sapphire/type)
-[![Depfu](https://badges.depfu.com/badges/8dedb6272de1c5b5535d5c82f174def8/count.svg)](https://depfu.com/github/sapphire-community/type?project_id=17030)
+[![Depfu](https://badges.depfu.com/badges/8dedb6272de1c5b5535d5c82f174def8/count.svg)](https://depfu.com/github/sapphiredev/oject_id=17030)
 
 </div>
 
@@ -71,7 +69,7 @@ console.log(type.toString());
 
 ## API Documentation
 
-For the full API documentation please refer to the TypeDoc generated [documentation](https://sapphire-community.github.io/type/index.html).
+For the full API documentation please refer to the TypeDoc generated [documentation](https://sapphiredev.github.io/type/index.html).
 
 ## Buy us some doughnuts
 
@@ -95,8 +93,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://favware.tech/"><img src="https://avatars.githubusercontent.com/u/4019718?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeroen Claassens</b></sub></a><br /><a href="https://github.com/sapphire-community/type/commits?author=Favna" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/PyroTechniac"><img src="https://avatars.githubusercontent.com/u/39341355?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gryffon Bellish</b></sub></a><br /><a href="https://github.com/sapphire-community/type/commits?author=PyroTechniac" title="Code">💻</a></td>
+    <td align="center"><a href="https://favware.tech/"><img src="https://avatars.githubusercontent.com/u/4019718?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeroen Claassens</b></sub></a><br /><a href="https://github.com/sapphiredev/mmits?author=Favna" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/PyroTechniac"><img src="https://avatars.githubusercontent.com/u/39341355?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gryffon Bellish</b></sub></a><br /><a href="https://github.com/sapphiredev/mmits?author=PyroTechniac" title="Code">💻</a></td>
   </tr>
 </table>
 
