@@ -36,11 +36,10 @@ jobs:
           path: build/stage/**/*.tar.gz
           if-no-files-found: error
       - name: Publish Binaries
-        uses: icrawl/action-artifact@v2
+        uses: fnkr/github-action-ghr@v1
         env:
+          GHR_PATH: 'build/stage/**/*.tar.gz'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: 'build/stage/**/*.tar.gz'
 
   # Crosspost:
   #   name: Release Crosspost
