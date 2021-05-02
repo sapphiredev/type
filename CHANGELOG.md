@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/sapphiredev/utilities/compare/v2.0.1...v2.0.2) (2021-05-02)
+
+
+### Bug Fixes
+
+* switch back to icrawl's v1 artifact uploader ([e7450cf](https://github.com/sapphiredev/utilities/commit/e7450cfbd887e37597e840aa3bd1e919f9fa8a58))
+
 ### [2.0.1](https://github.com/sapphiredev/utilities/compare/v2.0.0...v2.0.1) (2021-05-02)
 
 
