@@ -30,7 +30,7 @@
 		"gyp:configure": "node-pre-gyp configure",
 		"gyp:build": "node-pre-gyp build",
 		"gyp:package": "node-pre-gyp package",
-		"gyp:prebuild": "node-pre-gyp configure install build package"
+		"gyp:prebuild": "node-pre-gyp install build package"
 	},
 	"binary": {
 		"module_name": "type",
