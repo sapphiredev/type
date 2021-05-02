@@ -6,6 +6,6 @@
 		"outDir": "./build",
 		"tsBuildInfoFile": "./build/.tsbuildinfo"
 	},
-	"include": ["./", "../src/mapbox-types.d.ts"],
+	"include": ["./", "../src/node-pre-gyp.d.ts"],
 	"references": [{ "path": "../src" }]
 }
