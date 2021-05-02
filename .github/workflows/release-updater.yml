@@ -36,22 +36,22 @@ jobs:
           path: build/stage/**/*.tar.gz
           if-no-files-found: error
       - name: Publish Binaries
-        uses: icrawl/action-artifact@v2.0.1
+        uses: icrawl/action-artifact@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path: 'build/stage/**/*.tar.gz'
 
-  # Crosspost:
-  #   name: Release Crosspost
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Parse release name
-  #       id: get_release_name
-  #       run: echo ::set-output name=release_name::${RELEASE:-$TAG}
-  #       env:
-  #         RELEASE: ${{ github.event.release.name }}
-  #         TAG: ${{ github.event.release.tag_name }}
+  Crosspost:
+    name: Release Crosspost
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse release name
+        id: get_release_name
+        run: echo ::set-output name=release_name::${RELEASE:-$TAG}
+        env:
+          RELEASE: ${{ github.event.release.name }}
+          TAG: ${{ github.event.release.tag_name }}
 
       - name: Send Release Message
         id: crosspost_action
