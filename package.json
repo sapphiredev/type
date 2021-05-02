@@ -29,7 +29,8 @@
 		"gyp:rebuild": "node-pre-gyp rebuild",
 		"gyp:configure": "node-pre-gyp configure",
 		"gyp:build": "node-pre-gyp build",
-		"gyp:package": "node-pre-gyp package"
+		"gyp:package": "node-pre-gyp package",
+		"gyp:prebuild": "node-pre-gyp install build package"
 	},
 	"binary": {
 		"module_name": "type",
@@ -40,16 +41,16 @@
 		"pkg_path": "."
 	},
 	"dependencies": {
-		"@mapbox/node-pre-gyp": "^1.0.4",
+		"@discordjs/node-pre-gyp": "^0.3.2",
 		"nan": "^2.14.2",
 		"tslib": "^2.2.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^12.1.1",
 		"@commitlint/config-conventional": "^12.1.1",
-		"@sapphire/eslint-config": "^3.1.1",
-		"@sapphire/prettier-config": "^1.1.0",
-		"@sapphire/ts-config": "^2.2.0",
+		"@sapphire/eslint-config": "^3.1.2",
+		"@sapphire/prettier-config": "^1.1.1",
+		"@sapphire/ts-config": "^2.2.1",
 		"@types/jest": "^26.0.23",
 		"@types/node": "^15.0.1",
 		"cz-conventional-changelog": "^3.3.0",

@@ -28,10 +28,7 @@ jobs:
       - name: Install Dependencies
         run: yarn --frozen-lockfile
       - name: Build and package code
-        run: |
-          yarn gyp:configure
-          yarn gyp:rebuild
-          yarn gyp:package
+        run: yarn gyp:prebuild
       - name: Publish Binaries
         uses: icrawl/action-artifact@v2
         env:

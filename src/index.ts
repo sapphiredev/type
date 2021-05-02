@@ -1,4 +1,4 @@
-import { find } from '@mapbox/node-pre-gyp';
+import { find } from '@discordjs/node-pre-gyp';
 import { resolve, join } from 'path';
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
