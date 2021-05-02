@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/sapphiredev/utilities/compare/v2.0.0...v2.0.1) (2021-05-02)
+
+
+### Bug Fixes
+
+* switch to @discordjs/node-pre-gyp ([1b4847c](https://github.com/sapphiredev/utilities/commit/1b4847c5bae9c20f78ba34e3be3edb067dafd4dc))
+
 ## 2.0.0 (2021-05-02)
 
 
