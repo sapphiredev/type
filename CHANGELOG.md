@@ -1,7 +1,18 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 2.0.0 (2021-05-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* **type:** No longer bundles with rollup because this relies on NodeJS internals and should
+only be used in NodeJS environments.
+
+### Features
+
+* **type:** native module for node 16 ([d5fd960](https://github.com/sapphiredev/utilities/commit/d5fd9607f6e951d712d9dbf3160bd78dd57fdf82))
 
 # [1.2.0](https://github.com/sapphiredev/utilities/compare/@sapphire/type@1.1.8...@sapphire/type@1.2.0) (2021-04-21)
 
