@@ -61,7 +61,7 @@ jobs:
     needs: pre_ci
     strategy:
       matrix:
-        node: [16, 16, 16]
+        node: [14, 15, 16]
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -76,7 +76,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ matrix.node }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies if Cache Miss
-        if: ${{ !steps.cache-restore-${{ matrix.node}}.outputs.cache-hit }}
+        if: ${{ !steps.cache-restore-matrix.node.outputs.cache-hit }}
         run: yarn --frozen-lockfile
       - name: Run tests
         run: yarn test --coverage

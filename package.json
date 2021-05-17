@@ -46,8 +46,8 @@
 		"tslib": "^2.2.0"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^12.1.1",
-		"@commitlint/config-conventional": "^12.1.1",
+		"@commitlint/cli": "^12.1.4",
+		"@commitlint/config-conventional": "^12.1.4",
 		"@sapphire/eslint-config": "^3.1.2",
 		"@sapphire/prettier-config": "^1.1.1",
 		"@sapphire/ts-config": "^2.2.1",
