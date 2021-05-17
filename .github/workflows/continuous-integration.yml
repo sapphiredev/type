@@ -63,10 +63,6 @@ jobs:
       matrix:
         node: [12, 14, 15, 16]
     steps:
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJSON(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
       - name: Checkout Project
         uses: actions/checkout@v2
       - name: Use Node.js v${{ matrix.node }}
