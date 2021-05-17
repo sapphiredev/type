@@ -71,11 +71,12 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Restore CI Cache
         uses: actions/cache@v2.1.5
-        id: cache-restore-${{ matrix.node}}
+        id: cache-restore-${{ matrix.node }}
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ matrix.node }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Install Dependencies
+      - name: Install Dependencies if Cache Miss
+        if: ${{ !steps.cache-restore-${{ matrix.node }}.outputs.cache-hit }}
         run: yarn --frozen-lockfile
       - name: Run tests
         run: yarn test --coverage
