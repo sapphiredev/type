@@ -63,6 +63,10 @@ jobs:
       matrix:
         node: [12, 14, 15, 16]
     steps:
+      - name: Dump matrix context
+        env:
+          MATRIX_CONTEXT: ${{ toJSON(matrix) }}
+        run: echo "$MATRIX_CONTEXT"
       - name: Checkout Project
         uses: actions/checkout@v2
       - name: Use Node.js v${{ matrix.node }}
@@ -76,8 +80,10 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ matrix.node }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies if Cache Miss
-        if: ${{ !steps.cache-restore-${{ matrix.node }}.outputs.cache-hit }}
+        if: ${{ !steps.cache-restore-${NODE_VERSION}.outputs.cache-hit }}
         run: yarn --frozen-lockfile
+        env:
+          NODE_VERSION: ${{ matrix.node }}
       - name: Run tests
         run: yarn test --coverage
       - name: Store code coverage report
