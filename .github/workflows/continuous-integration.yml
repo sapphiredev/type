@@ -75,11 +75,8 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ matrix.node }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Install Dependencies if Cache Miss
-        if: ${{ !steps.cache-restore-${NODE_VERSION}.outputs.cache-hit }}
+      - name: Install Dependencies
         run: yarn --frozen-lockfile
-        env:
-          NODE_VERSION: ${{ matrix.node}}
       - name: Run tests
         run: yarn test --coverage
       - name: Store code coverage report
