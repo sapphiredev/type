@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.3](https://github.com/sapphiredev/utilities/compare/v2.0.2...v2.0.3) (2021-05-20)
+
+
+### Bug Fixes
+
+* mark package as Side Effect free ([fa1625c](https://github.com/sapphiredev/utilities/commit/fa1625c1957fc182e7597499c7573d843ab11652))
+
 ### [2.0.2](https://github.com/sapphiredev/utilities/compare/v2.0.1...v2.0.2) (2021-05-02)
 
 
