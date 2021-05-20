@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.4](https://github.com/sapphiredev/utilities/compare/v2.0.3...v2.0.4) (2021-05-20)
+
+
+### Bug Fixes
+
+* ensure bundlers do not incorrectly detect missing dependency ([4244a36](https://github.com/sapphiredev/utilities/commit/4244a3608f86bb7f99c1cbff04741794f035e187))
+
 ### [2.0.3](https://github.com/sapphiredev/utilities/compare/v2.0.2...v2.0.3) (2021-05-20)
 
 
