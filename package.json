@@ -53,7 +53,7 @@
 		"@sapphire/prettier-config": "^1.1.2",
 		"@sapphire/ts-config": "^2.2.2",
 		"@types/jest": "^26.0.23",
-		"@types/node": "^15.6.0",
+		"@types/node": "^15.6.1",
 		"cz-conventional-changelog": "^3.3.0",
 		"gen-esm-wrapper": "^1.1.1",
 		"husky": "^6.0.0",
