@@ -12,7 +12,7 @@
 		"require": "./dist/index.js"
 	},
 	"sideEffects": false,
-	"homepage": "https://github.com/sapphiredev/utilities/tree/main/packages/type",
+	"homepage": "https://github.com/sapphiredev/type",
 	"scripts": {
 		"clean": "node scripts/clean.mjs",
 		"docs": "typedoc",
@@ -82,8 +82,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/sapphiredev/utilities.git",
-		"directory": "packages/type"
+		"url": "git+https://github.com/sapphiredev/type.git"
 	},
 	"engines": {
 		"node": ">=12",
@@ -99,7 +98,7 @@
 		"standalone"
 	],
 	"bugs": {
-		"url": "https://github.com/sapphiredev/utilities/issues"
+		"url": "https://github.com/sapphiredev/type/issues"
 	},
 	"publishConfig": {
 		"access": "public"
