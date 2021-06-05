@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.5](https://github.com/sapphiredev/type/compare/v2.0.4...v2.0.5) (2021-06-05)
+
+
+### Bug Fixes
+
+* fixed urls in package, changelog and readme ([93ec5c3](https://github.com/sapphiredev/type/commit/93ec5c3918bfec502efcbc417999d7fbc74cd4d6))
+
 ### [2.0.4](https://github.com/sapphiredev/type/compare/v2.0.3...v2.0.4) (2021-05-20)
 
 
