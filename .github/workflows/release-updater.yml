@@ -1,9 +1,13 @@
 name: Release Updater
 
+# TODO: Restore this on trigger
+# on:
+#   release:
+#     types:
+#       - published
+
 on:
-  release:
-    types:
-      - published
+  push:
 
 jobs:
   Prebuilds:
@@ -11,8 +15,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: [12, 14, 15, 16]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        node: [12, 13, 14, 15, 16]
+        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11.0, windows-2016, windows-2019]
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -25,7 +29,7 @@ jobs:
         id: cache-restore
         with:
           path: node_modules
-          key: ${{ matrix.os }}-${{ matrix.node_version }}-${{ hashFiles(matrix.os == 'windows-latest' && '**\yarn.lock' || '**/yarn.lock') }}
+          key: ${{ matrix.os }}-${{ matrix.node }}-${{ hashFiles(matrix.os == 'windows-latest' && '**\yarn.lock' || '**/yarn.lock') }}
       - name: Install Dependencies if Cache Miss
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
         run: yarn --frozen-lockfile
@@ -37,28 +41,70 @@ jobs:
           name: prebuilt-${{ matrix.os }}-${{ matrix.node }}.tar.gz
           path: build/stage/**/*.tar.gz
           if-no-files-found: error
-      - name: Publish Binaries
-        uses: icrawl/action-artifact@v2.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: 'build/stage/**/*.tar.gz'
+      # TODO: Restore publishing of binaries
+      # - name: Publish Binaries
+      #   uses: icrawl/action-artifact@v2.0.1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     path: 'build/stage/**/*.tar.gz'
 
-  Crosspost:
-    name: Release Crosspost
+  PrebuildMusl:
+    name: Publish Musl Binary
     runs-on: ubuntu-latest
+    container:
+      image: node:${{ matrix.node }}-alpine
+    strategy:
+      matrix:
+        node: [12, 13, 14, 15, 16]
     steps:
-      - name: Parse release name
-        id: get_release_name
-        run: echo ::set-output name=release_name::${RELEASE:-$TAG}
-        env:
-          RELEASE: ${{ github.event.release.name }}
-          TAG: ${{ github.event.release.tag_name }}
-
-      - name: Send Release Message
-        id: crosspost_action
-        uses: kludge-cs/gitcord-release-changelogger@v3.0.0
+      - name: Setup env with Node v${{ matrix.node }}
+        run: |
+          apk add --update
+          apk add --no-cache ca-certificates git curl build-base python3 g++ make
+      - name: Checkout Project
+        uses: actions/checkout@v2
+      - name: Restore CI Cache
+        uses: actions/cache@v2.1.6
+        id: cache-restore
         with:
-          webhook-url: ${{ secrets.RELEASE_WEBHOOK }}
-          release-body: ${{ github.event.release.body }}
-          release-name: ${{ steps.get_release_name.outputs.release_name }}
+          path: node_modules
+          key: musl-${{ matrix.node }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Dependencies if Cache Miss
+        if: ${{ !steps.cache-restore.outputs.cache-hit }}
+        run: yarn --frozen-lockfile
+      - name: Build and package code
+        run: yarn gyp:prebuild
+      - name: Store prebuild
+        uses: actions/upload-artifact@v2
+        with:
+          name: prebuilt-musl-${{ matrix.node }}.tar.gz
+          path: build/stage/**/*.tar.gz
+          if-no-files-found: error
+      # TODO: Restore publishing of binaries
+      # - name: Publish Binaries
+      #   uses: icrawl/action-artifact@v2.0.1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     path: 'build/stage/**/*.tar.gz'
+
+  # TODO: Restore crosspost job
+  # Crosspost:
+  #   name: Release Crosspost
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Parse release name
+  #       id: get_release_name
+  #       run: echo ::set-output name=release_name::${RELEASE:-$TAG}
+  #       env:
+  #         RELEASE: ${{ github.event.release.name }}
+  #         TAG: ${{ github.event.release.tag_name }}
+
+  #     - name: Send Release Message
+  #       id: crosspost_action
+  #       uses: kludge-cs/gitcord-release-changelogger@v3.0.0
+  #       with:
+  #         webhook-url: ${{ secrets.RELEASE_WEBHOOK }}
+  #         release-body: ${{ github.event.release.body }}
+  #         release-name: ${{ steps.get_release_name.outputs.release_name }}
