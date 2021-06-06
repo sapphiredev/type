@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.6](https://github.com/sapphiredev/type/compare/v2.0.5...v2.0.6) (2021-06-06)
+
+
+### Bug Fixes
+
+* add musl prebuilts ([#233](https://github.com/sapphiredev/type/issues/233)) ([2fe8d13](https://github.com/sapphiredev/type/commit/2fe8d13ad7e138cf8af3ea1b057beddb09369522))
+
 ### [2.0.5](https://github.com/sapphiredev/type/compare/v2.0.4...v2.0.5) (2021-06-05)
 
 
