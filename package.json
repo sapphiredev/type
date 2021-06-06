@@ -31,7 +31,7 @@
 		"gyp:configure": "node-pre-gyp configure",
 		"gyp:build": "node-pre-gyp build",
 		"gyp:package": "node-pre-gyp package",
-		"gyp:prebuild": "node-pre-gyp clean configure install build package --fallback-to-build"
+		"gyp:prebuild": "node-pre-gyp configure install build package --fallback-to-build"
 	},
 	"binary": {
 		"module_name": "type",
