@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.9](https://github.com/sapphiredev/type/compare/v2.0.8...v2.0.9) (2021-06-06)
+
+
+### Bug Fixes
+
+* restore v2.0.5 module_path and package_name ([cdd7d64](https://github.com/sapphiredev/type/commit/cdd7d6468fee0627941c5b3df3b55bee492d0257))
+
 ### [2.0.8](https://github.com/sapphiredev/type/compare/v2.0.7...v2.0.8) (2021-06-06)
 
 
