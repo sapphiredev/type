@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.7](https://github.com/sapphiredev/type/compare/v2.0.6...v2.0.7) (2021-06-06)
+
+
+### Bug Fixes
+
+* explicitly fallback to build when creating prebuilts ([992cf1f](https://github.com/sapphiredev/type/commit/992cf1f0b560e857c28fe2a846a137a9eb671b6b))
+
 ### [2.0.6](https://github.com/sapphiredev/type/compare/v2.0.5...v2.0.6) (2021-06-06)
 
 
