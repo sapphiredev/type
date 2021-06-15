@@ -4,6 +4,11 @@ describe('Objects', () => {
 	test('object(generic)', () => {
 		expect(new Type({}).toString()).toBe('Record');
 	});
+	
+	test('object(null-prototype)', () => {
+		const foo = Object.create(null);
+		expect(new Type(foo).toString()).toBe('Record');
+	});
 
 	test('object(null)', () => {
 		expect(new Type(null).toString()).toBe('null');
