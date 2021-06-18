@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.11](https://github.com/sapphiredev/type/compare/v2.0.10...v2.0.11) (2021-06-18)
+
+
+### Bug Fixes
+
+* bump gen-esm-wrapper dependency to remove __esModule key ([49de458](https://github.com/sapphiredev/type/commit/49de4589849aef0adeeab66504c4ac0149822602))
+
 ### [2.0.10](https://github.com/sapphiredev/type/compare/v2.0.9...v2.0.10) (2021-06-18)
 
 
