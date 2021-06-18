@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.10](https://github.com/sapphiredev/type/compare/v2.0.9...v2.0.10) (2021-06-18)
+
+
+### Bug Fixes
+
+* fixed object with null prototypes being ignored ([#234](https://github.com/sapphiredev/type/issues/234)) ([b83e14e](https://github.com/sapphiredev/type/commit/b83e14e4f2917cd55e8d3cdf25562c0e3b35a80d))
+
 ### [2.0.9](https://github.com/sapphiredev/type/compare/v2.0.5...v2.0.9) (2021-06-06)
 
 ### Bug Fixes
