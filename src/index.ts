@@ -141,7 +141,7 @@ export class Type {
 		const type = typeof value;
 		switch (type) {
 			case 'object':
-				return value === null ? 'null' : value.constructor && value.constructor.name;
+				return value === null ? 'null' : value.constructor ? value.constructor.name : 'Object';
 			case 'function':
 				return `${value.constructor.name}(${value.length}-arity)`;
 			case 'undefined':
