@@ -1,7 +1,5 @@
 {
 	"recommendations": [
-		"xyc.vscode-mdx-preview",
-		"silvenon.mdx",
 		"bierner.github-markdown-preview",
 		"dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode"
