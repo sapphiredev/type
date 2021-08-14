@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/sapphiredev/type/compare/v2.0.11...v2.1.0) (2021-08-14)
+
+
+### Features
+
+* create release with prebuilts for Node 16.6.2 ([560018a](https://github.com/sapphiredev/type/commit/560018a01a90e07666fba00035af774bf1d4a7c8))
+
 ### [2.0.11](https://github.com/sapphiredev/type/compare/v2.0.10...v2.0.11) (2021-06-18)
 
 
