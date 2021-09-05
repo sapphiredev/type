@@ -28,7 +28,7 @@ jobs:
           key: ${{ matrix.os }}-${{ matrix.node }}-${{ hashFiles(matrix.os == 'windows-latest' && '**\yarn.lock' || '**/yarn.lock') }}
       - name: Install Dependencies if Cache Miss
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
-        run: yarn --frozen-lockfile
+        run: yarn --frozen-lockfile --ignore-engines
       - name: Build and package code
         run: yarn gyp:prebuild
       - name: Store prebuild
@@ -67,7 +67,7 @@ jobs:
           key: musl-${{ matrix.node }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies if Cache Miss
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
-        run: yarn --frozen-lockfile
+        run: yarn --frozen-lockfile --ignore-engines
       - name: Build and package code
         run: yarn gyp:prebuild
       - name: Store prebuild
