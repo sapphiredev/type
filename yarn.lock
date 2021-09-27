@@ -3329,7 +3329,7 @@ jest-changed-files@^27.1.1:
     execa "^5.0.0"
     throat "^6.0.1"
 
-jest-circus@^27.1.0, jest-circus@^27.2.2:
+jest-circus@^27.2.2:
   version "27.2.2"
   resolved "https://registry.yarnpkg.com/jest-circus/-/jest-circus-27.2.2.tgz#a3647082f3eba1226f7664a36a2b7ebf45ceaf7b"
   integrity sha512-8txlqs0EDrvPasCgwfLMkG0l3F4FxqQa6lxOsvYfOl04eSJjRw3F4gk9shakuC00nMD+VT+SMtFYXxe64f0VZw==
@@ -3737,7 +3737,7 @@ jest-worker@^27.2.2:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@^27.1.0:
+jest@^27.2.2:
   version "27.2.2"
   resolved "https://registry.yarnpkg.com/jest/-/jest-27.2.2.tgz#445a4c16aa4c4ae6e512d62fb6f8b2624cbd6c26"
   integrity sha512-XAB/9akDTe3/V0wPNKWfP9Y/NT1QPiCqyRBYGbC66EA9EvgAzdaFEqhFGLaDJ5UP2yIyXUMtju9a9IMrlYbZTQ==
