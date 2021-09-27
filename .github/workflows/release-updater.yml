@@ -15,13 +15,13 @@ jobs:
         os: [ubuntu-18.04, ubuntu-20.04, macos-latest, windows-latest]
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # renovate: tag=v2
       - name: Use Node.js v${{ matrix.node }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@270253e841af726300e85d718a5f606959b2903c # renovate: tag=v2
         with:
           node-version: ${{ matrix.node }}
       - name: Restore CI Cache
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
         id: cache-restore
         with:
           path: node_modules
@@ -32,13 +32,13 @@ jobs:
       - name: Build and package code
         run: yarn gyp:prebuild
       - name: Store prebuild
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@27121b0bdffd731efa15d66772be8dc71245d074 # renovate: tag=v2
         with:
           name: prebuilt-${{ matrix.os }}-${{ matrix.node }}.tar.gz
           path: build/stage/**/*.tar.gz
           if-no-files-found: error
       - name: Publish Binaries
-        uses: icrawl/action-artifact@v2.0.1
+        uses: icrawl/action-artifact@89adb3b7511ac7d1d6e54e52239c848a701a932f # renovate: tag=v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -58,9 +58,9 @@ jobs:
           apk add --update
           apk add --no-cache ca-certificates git curl build-base python3 g++ make
       - name: Checkout Project
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # renovate: tag=v2
       - name: Restore CI Cache
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
         id: cache-restore
         with:
           path: node_modules
@@ -71,13 +71,13 @@ jobs:
       - name: Build and package code
         run: yarn gyp:prebuild
       - name: Store prebuild
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@27121b0bdffd731efa15d66772be8dc71245d074 # renovate: tag=v2
         with:
           name: prebuilt-musl-${{ matrix.node }}.tar.gz
           path: build/stage/**/*.tar.gz
           if-no-files-found: error
       - name: Publish Binaries
-        uses: icrawl/action-artifact@v2.0.1
+        uses: icrawl/action-artifact@89adb3b7511ac7d1d6e54e52239c848a701a932f # renovate: tag=v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -96,7 +96,7 @@ jobs:
 
       - name: Send Release Message
         id: crosspost_action
-        uses: kludge-cs/gitcord-release-changelogger@v3.0.0
+        uses: kludge-cs/gitcord-release-changelogger@5592170408dc081d7cb6a74ce025911bd1fcb7c3 # renovate: tag=v3.0.0
         with:
           webhook-url: ${{ secrets.RELEASE_WEBHOOK }}
           release-body: ${{ github.event.release.body }}
