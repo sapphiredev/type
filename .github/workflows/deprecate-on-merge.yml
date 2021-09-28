@@ -24,7 +24,7 @@ jobs:
           key: ${{ runner.os }}-16-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies if Cache Miss
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
-        run: yarn --frozen-lockfile --ignore-engines
+        run: yarn --frozen-lockfile
       - name: Deprecate versions
         run: yarn npm-deprecate --name "*pr-${PR_NUMBER}*" -d -v
         env:
