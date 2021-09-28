@@ -52,7 +52,7 @@
 		"@favware/npm-deprecate": "^1.0.2",
 		"@sapphire/eslint-config": "^3.2.3",
 		"@sapphire/prettier-config": "^1.1.6",
-		"@sapphire/ts-config": "^2.3.2",
+		"@sapphire/ts-config": "^3.0.0",
 		"@types/jest": "^27.0.2",
 		"@types/node": "^15.14.9",
 		"cz-conventional-changelog": "^3.3.0",
