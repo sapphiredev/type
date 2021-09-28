@@ -105,5 +105,8 @@
 		"access": "public"
 	},
 	"gypfile": true,
-	"prettier": "@sapphire/prettier-config"
+	"prettier": "@sapphire/prettier-config",
+	"volta": {
+		"node": "14.17.6"
+	}
 }
