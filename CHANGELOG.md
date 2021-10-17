@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/sapphiredev/type/compare/v2.1.0...v2.1.1) (2021-10-17)
+
+
+### Bug Fixes
+
+* allow more node & npm versions in engines field ([2325577](https://github.com/sapphiredev/type/commit/232557704ad5f754eac56711ac05ded97a2f4ba8))
+
 ## [2.1.0](https://github.com/sapphiredev/type/compare/v2.0.11...v2.1.0) (2021-08-14)
 
 
