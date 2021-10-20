@@ -53,7 +53,7 @@ yarn add @sapphire/type
 
 ### Basic Usage
 
-```ts
+```typescript
 // Import the Type class
 const { Type } = require('@sapphire/type');
 
