@@ -21,7 +21,6 @@
     -   [Installation](#installation)
     -   [Usage](#usage)
         -   [Basic Usage](#basic-usage)
-    -   [API Documentation](#api-documentation)
     -   [Buy us some doughnuts](#buy-us-some-doughnuts)
     -   [Contributors ✨](#contributors-%E2%9C%A8)
 
@@ -66,10 +65,6 @@ console.log(type.toString());
 
 ---
 
-## API Documentation
-
-For the full API documentation please refer to the TypeDoc generated [documentation](https://sapphiredev.github.io/type/index.html).
-
 ## Buy us some doughnuts
 
 Sapphire Community is and always will be open source, even if we don't get donations. That being said, we know there are amazing people who may still want to donate just to show their appreciation. Thank you very much in advance!
@@ -78,10 +73,10 @@ We accept donations through Open Collective, Ko-fi, PayPal, Patreon and GitHub S
 
 |   Donate With   |                       Address                       |
 | :-------------: | :-------------------------------------------------: |
-| Open Collective | [Click Here](https://sapphirejs.com/opencollective) |
-|      Ko-fi      |      [Click Here](https://sapphirejs.com/kofi)      |
-|     Patreon     |    [Click Here](https://sapphirejs.com/patreon)     |
-|     PayPal      |     [Click Here](https://sapphirejs.com/paypal)     |
+| Open Collective | [Click Here](https://sapphirejs.dev/opencollective) |
+|      Ko-fi      |      [Click Here](https://sapphirejs.dev/kofi)      |
+|     Patreon     |    [Click Here](https://sapphirejs.dev/patreon)     |
+|     PayPal      |     [Click Here](https://sapphirejs.dev/paypal)     |
 
 ## Contributors ✨
 
