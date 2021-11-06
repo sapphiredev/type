@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.2](https://github.com/sapphiredev/type/compare/v2.1.1...v2.1.2) (2021-11-06)
+
 ### [2.1.1](https://github.com/sapphiredev/type/compare/v2.1.0...v2.1.1) (2021-10-17)
 
 
