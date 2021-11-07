@@ -15,7 +15,7 @@ jobs:
         os: [ubuntu-18.04, ubuntu-20.04, macos-latest, windows-latest]
     steps:
       - name: Checkout Project
-        uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97 # renovate: tag=v2
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
       - name: Use Node.js v${{ matrix.node }}
         uses: actions/setup-node@270253e841af726300e85d718a5f606959b2903c # renovate: tag=v2
         with:
@@ -58,7 +58,7 @@ jobs:
           apk add --update
           apk add --no-cache ca-certificates git curl build-base python3 g++ make
       - name: Checkout Project
-        uses: actions/checkout@1e204e9a9253d643386038d443f96446fa156a97 # renovate: tag=v2
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2
       - name: Restore CI Cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
         id: cache-restore
