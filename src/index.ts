@@ -1,7 +1,6 @@
 import { find } from '@discordjs/node-pre-gyp';
 import { resolve, join } from 'path';
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Internals {
 	export function getPromiseDetails(thing: any): number[];
 	export function getProxyDetails(thing: any): number[];
