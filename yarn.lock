@@ -4317,10 +4317,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-jsdom@https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.1.1.tgz":
-  version: 1.1.1
-  resolution: "jest-environment-jsdom@https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.1.1.tgz"
-  checksum: 9fb69119e951ffea27fb2251e1cf85981d1f7e659e9cea61ef4aaf327c197789c3fae03f3da3067e03d41b51e9c6b33e6e085f29928a7a702b15612b1631f410
+"jest-environment-jsdom@https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.1.2.tgz":
+  version: 1.1.2
+  resolution: "jest-environment-jsdom@https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.1.2.tgz"
+  checksum: 295ec68571122080a03562ca611fe77503e470d0153d108acf0280a2503a10ae98a931f3d50bb0c63655fb14b3fd90fc25a32ed8dc7940103ed3b28ab1b6b3bb
   languageName: node
   linkType: hard
 
