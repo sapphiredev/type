@@ -108,5 +108,5 @@
 	},
 	"gypfile": true,
 	"prettier": "@sapphire/prettier-config",
-	"packageManager": "yarn@3.1.1"
+	"packageManager": "yarn@3.2.0"
 }
