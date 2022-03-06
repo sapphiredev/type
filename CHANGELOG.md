@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/sapphiredev/type/compare/v2.1.2...v2.2.0) (2022-03-06)
+
+
+### Features
+
+* allow module: NodeNext ([#317](https://github.com/sapphiredev/type/issues/317)) ([91e72b2](https://github.com/sapphiredev/type/commit/91e72b205aedc10a493cc984404fce06e87046a4))
+
+
+### Bug Fixes
+
+* remove eslint-ignore comment ([#280](https://github.com/sapphiredev/type/issues/280)) ([c466d92](https://github.com/sapphiredev/type/commit/c466d92c240c0cca11a88b25108acedc0ba48796))
+
 ### [2.1.2](https://github.com/sapphiredev/type/compare/v2.1.1...v2.1.2) (2021-11-06)
 
 ### [2.1.1](https://github.com/sapphiredev/type/compare/v2.1.0...v2.1.1) (2021-10-17)
