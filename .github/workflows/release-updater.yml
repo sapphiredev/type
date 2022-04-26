@@ -6,13 +6,46 @@ on:
       - published
 
 jobs:
-  Prebuilds:
-    name: Publish Binaries
+  PrebuildsLegacy:
+    name: Publish Binaries Node v${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: [12, 14, 15, 16, 17, 18]
-        os: [ubuntu-18.04, ubuntu-20.04, macos-latest, windows-latest]
+        node: [12, 14, 15, 16, 17]
+        os: [ubuntu-18.04, ubuntu-20.04, macos-latest, macos-12, windows-latest]
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+      - name: Use Node.js v${{ matrix.node }}
+        uses: actions/setup-node@56337c425554a6be30cdef71bf441f15be286854 # tag=v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: yarn
+          registry-url: https://registry.npmjs.org/
+      - name: Install Dependencies
+        run: yarn --immutable
+      - name: Build and package code
+        run: yarn gyp:prebuild
+      - name: Store prebuild
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
+        with:
+          name: prebuilt-${{ matrix.os }}-${{ matrix.node }}.tar.gz
+          path: build/stage/**/*.tar.gz
+          if-no-files-found: error
+      - name: Publish Binaries
+        uses: icrawl/action-artifact@89adb3b7511ac7d1d6e54e52239c848a701a932f # renovate: tag=v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path: 'build/stage/**/*.tar.gz'
+
+  PrebuildsModern:
+    name: Publish Binaries Node v${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: [18]
+        os: [ubuntu-20.04, macos-latest, macos-12, windows-latest]
     steps:
       - name: Checkout Project
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
