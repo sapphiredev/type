@@ -1,0 +1,4 @@
+name: type
+packagePath: .
+org: sapphire
+commitMessageTemplate: 'chore(release): release {{new-version}}'
