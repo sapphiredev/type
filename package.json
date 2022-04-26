@@ -86,8 +86,8 @@
 		"url": "git+https://github.com/sapphiredev/type.git"
 	},
 	"engines": {
-		"node": ">=v14.0.0",
-		"npm": ">=7.0.0"
+		"node": ">=v12",
+		"npm": ">=7"
 	},
 	"keywords": [
 		"@sapphire/type",

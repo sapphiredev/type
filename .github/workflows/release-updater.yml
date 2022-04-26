@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: [12, 14, 15, 16]
+        node: [12, 14, 15, 16, 17, 18]
         os: [ubuntu-18.04, ubuntu-20.04, macos-latest, windows-latest]
     steps:
       - name: Checkout Project
@@ -46,7 +46,7 @@ jobs:
       image: node:${{ matrix.node }}-alpine
     strategy:
       matrix:
-        node: [12, 14, 15, 16]
+        node: [12, 14, 15, 16, 17, 18]
     steps:
       - name: Setup env with Node v${{ matrix.node }}
         run: |
