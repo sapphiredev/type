@@ -22,7 +22,7 @@
 		"build": "yarn gyp:configure && yarn ts:build && yarn gyp:build && gen-esm-wrapper dist/index.js dist/index.mjs",
 		"bump": "cliff-jumper",
 		"check-update": "cliff-jumper --dry-run",
-		"prepublish": "yarn build",
+		"prepack": "yarn build",
 		"install": "node-pre-gyp install --fallback-to-build",
 		"update": "yarn upgrade-interactive",
 		"ts:build": "tsc -b src",
