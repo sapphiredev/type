@@ -47,6 +47,7 @@ jobs:
       - name: Run tests
         run: yarn test --coverage
       - name: Store code coverage report
+        if: ${{ matrix.os }} == 'ubuntu-20.04' && ${{ matrix.node }} == '16'
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
         with:
           name: node-${{ matrix.node }}-${{ matrix.os }}
@@ -72,11 +73,6 @@ jobs:
         run: yarn --immutable
       - name: Run tests
         run: yarn test --coverage
-      - name: Store code coverage report
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
-        with:
-          name: node-${{ matrix.node }}-${{ matrix.os }}
-          path: coverage/
 
   BuildingLegacy:
     name: Compile source code Node v${{ matrix.node }} on ${{ matrix.os }}
