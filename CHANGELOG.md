@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.2.4](https://github.com/sapphiredev/type/compare/v2.2.0...v2.2.4) - (2022-04-29)
+
+## Bug Fixes
+
+- **prebuilts:** Remove `macos-12` target as it conflicts with `macos-latest` ([027a015](https://github.com/sapphiredev/type/commit/027a015bc3382c920c4499f89e57f10d5482e779))
+- **prebuilts:** Ensure proper prebuilts are published ([de4d79c](https://github.com/sapphiredev/type/commit/de4d79c6db35b6484f7d0ed978b9d6d1ae89525e))
+- Configure prebuilts for Node 17 and Node 18 ([ec2e873](https://github.com/sapphiredev/type/commit/ec2e8733446e3fbb2af7231fb26a467be7f6591b))
+
 # [@sapphire/type@2.2.3](https://github.com/sapphiredev/type/compare/v2.2.0...@sapphire/type@2.2.3) - (2022-04-26)
 
 ## Bug Fixes
