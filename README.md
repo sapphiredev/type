@@ -4,6 +4,8 @@
 
 # @sapphire/type
 
+Testing
+
 **A type detection utility for JavaScript.**
 
 [![GitHub](https://img.shields.io/github/license/sapphiredev/type)](https://github.com/sapphiredev/type/blob/main/LICENSE.md)
