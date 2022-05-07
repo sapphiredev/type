@@ -15,16 +15,6 @@ dist/
 build/
 prebuild/
 
-# Ignore JavaScript files
-**/*.js
-**/*.mjs
-**/*.js.map
-**/*.d.ts
-!src/**/*.d.ts
-**/*.tsbuildinfo
-!jest.config.ts
-!scripts/*.mjs
-
 # Ignore heapsnapshot and log files
 *.heapsnapshot
 *.log
