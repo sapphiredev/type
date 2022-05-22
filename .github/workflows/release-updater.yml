@@ -34,7 +34,7 @@ jobs:
       - name: Build and package code
         run: yarn gyp:prebuild
       - name: Store prebuild
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3
         with:
           name: prebuilt-${{ matrix.os }}-${{ matrix.node }}.tar.gz
           path: build/stage/**/*.tar.gz
@@ -66,7 +66,7 @@ jobs:
       - name: Build and package code
         run: yarn gyp:prebuild
       - name: Store prebuild
-        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
+        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8 # tag=v3
         with:
           name: prebuilt-musl-${{ matrix.node }}.tar.gz
           path: build/stage/**/*.tar.gz
