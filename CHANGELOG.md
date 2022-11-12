@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.2.5](https://github.com/sapphiredev/type/compare/v2.2.4...v2.2.5) - (2022-11-06)
+
+## 🐛 Bug Fixes
+
+- **deps:** Update all non-major dependencies (#417) ([482018e](https://github.com/sapphiredev/type/commit/482018e27c86e0f2c161cc25ca9e46249a808700))
+- **deps:** Update all non-major dependencies (#371) ([384abe7](https://github.com/sapphiredev/type/commit/384abe77ed77e56a0db834248b284e108f744dda))
+
+## 📝 Documentation
+
+- Add @allcontributors[bot] as a contributor ([00e117e](https://github.com/sapphiredev/type/commit/00e117e6b3cbfaa8b5bf877253a1ada853cb8bf2))
+- Add RealShadowNova as a contributor for tool (#389) ([ae3669f](https://github.com/sapphiredev/type/commit/ae3669f95ed68776c4b32158316d7a547c657d17))
+
+## 🧪 Testing
+
+- Switch to vitest (#387) ([2054309](https://github.com/sapphiredev/type/commit/2054309defbf73919196a92161bfb5c1e6659c2c))
+- Fix jest config ([8d73abe](https://github.com/sapphiredev/type/commit/8d73abee3d5faa6283b234c10dabcbfe1dbb2bc3))
+
 # [2.2.4](https://github.com/sapphiredev/type/compare/v2.2.0...v2.2.4) - (2022-04-29)
 
 ## Bug Fixes
