@@ -36,6 +36,10 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable --mode=skip-build
 
+      - name: Install node-gyp on windows-2019
+        if: ${{ matrix.os == 'windows-2019' }}
+        run: yarn add node-gyp
+
       - name: Build Code
         run: yarn build
 
@@ -49,7 +53,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-10.15, macos-11, macos-12, ubuntu-20.04, ubuntu-22.04, windows-2019]
-        node: [18]
+        node: [18, 19]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -66,6 +70,10 @@ jobs:
 
       - name: Install dependencies
         run: yarn --immutable --mode=skip-build
+
+      - name: Install node-gyp on windows-2019
+        if: ${{ matrix.os == 'windows-2019' }}
+        run: yarn add node-gyp
 
       - name: Build From Source
         run: yarn gyp:build-from-source
@@ -84,7 +92,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [12, 13, 14, 15, 16, 17, 18]
+        node: [12, 13, 14, 15, 16, 17, 18, 19]
     steps:
       - name: Setup env with Node v${{ matrix.node }}
         run: |
@@ -156,7 +164,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-20.04, ubuntu-22.04]
-        node: [18]
+        node: [18, 19]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -197,7 +205,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [12, 13, 14, 15, 16, 17, 18]
+        node: [12, 13, 14, 15, 16, 17, 18, 19]
     steps:
       - name: Setup env with Node v${{ matrix.node }}
         run: |

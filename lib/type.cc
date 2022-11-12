@@ -11,12 +11,10 @@ using v8::String;
 using v8::Undefined;
 using v8::Value;
 
-void GetPromiseDetails(const FunctionCallbackInfo<Value> &args)
-{
+void GetPromiseDetails(const FunctionCallbackInfo<Value> &args) {
 	auto isolate = args.GetIsolate();
 
-	if (!args[0]->IsPromise())
-	{
+	if (!args[0]->IsPromise()) {
 		args.GetReturnValue().Set(Undefined(isolate));
 		return;
 	}
@@ -38,8 +36,7 @@ void GetPromiseDetails(const FunctionCallbackInfo<Value> &args)
 void GetProxyDetails(const FunctionCallbackInfo<Value>& args) {
 	auto isolate = args.GetIsolate();
 
-	if (!args[0]->IsProxy())
-	{
+	if (!args[0]->IsProxy()) {
 		args.GetReturnValue().Set(Undefined(isolate));
 		return;
 	}
@@ -59,14 +56,7 @@ void GetProxyDetails(const FunctionCallbackInfo<Value>& args) {
 	}
 }
 
-NODE_MODULE_INIT()
-{
-	auto isolate = context->GetIsolate();
-
-	exports->Set(context,
-		String::NewFromUtf8(isolate, "getPromiseDetails").ToLocalChecked(),
-		FunctionTemplate::New(isolate, GetPromiseDetails)->GetFunction(context).ToLocalChecked());
-	exports->Set(context,
-		String::NewFromUtf8(isolate, "getProxyDetails").ToLocalChecked(),
-		FunctionTemplate::New(isolate, GetProxyDetails)->GetFunction(context).ToLocalChecked());
+NODE_MODULE_INIT() {
+	NODE_SET_METHOD(exports, "getPromiseDetails", GetPromiseDetails);
+	NODE_SET_METHOD(exports, "getProxyDetails", GetProxyDetails);
 }
