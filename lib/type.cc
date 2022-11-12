@@ -1,54 +1,72 @@
-#include <nan.h>
+#include <node.h>
 
-void GetPromiseDetails(const Nan::FunctionCallbackInfo<v8::Value>& args) {
-	if (!args[0]->IsPromise()) {
+using v8::Array;
+using v8::FunctionCallbackInfo;
+using v8::FunctionTemplate;
+using v8::Integer;
+using v8::Local;
+using v8::Promise;
+using v8::Proxy;
+using v8::String;
+using v8::Undefined;
+using v8::Value;
+
+void GetPromiseDetails(const FunctionCallbackInfo<Value> &args)
+{
+	auto isolate = args.GetIsolate();
+
+	if (!args[0]->IsPromise())
+	{
+		args.GetReturnValue().Set(Undefined(isolate));
 		return;
 	}
 
-	auto isolate = args.GetIsolate();
+	auto promise = args[0].As<Promise>();
+	auto state = promise->State();
 
-	v8::Local<v8::Promise> promise = args[0].As<v8::Promise>();
-	int state = promise->State();
-
-	v8::Local<v8::Value> values[2] = { v8::Integer::New(isolate, state) };
+	Local<Value> values[2] = { Integer::New(isolate, state) };
 	size_t number_of_values = 1;
 
-	if (state != v8::Promise::PromiseState::kPending) {
+	if (state != Promise::PromiseState::kPending) {
 		values[number_of_values++] = promise->Result();
 	}
 
-	v8::Local<v8::Array> ret = v8::Array::New(isolate, values, number_of_values);
+	Local<Array> ret = Array::New(isolate, values, number_of_values);
 	args.GetReturnValue().Set(ret);
 }
 
-void GetProxyDetails(const Nan::FunctionCallbackInfo<v8::Value>& args) {
-	if (!args[0]->IsProxy()) {
+void GetProxyDetails(const FunctionCallbackInfo<Value>& args) {
+	auto isolate = args.GetIsolate();
+
+	if (!args[0]->IsProxy())
+	{
+		args.GetReturnValue().Set(Undefined(isolate));
 		return;
 	}
 
-	v8::Local<v8::Proxy> proxy = args[0].As<v8::Proxy>();
+	auto proxy = args[0].As<Proxy>();
 
 	if (args.Length() == 1 || args[1]->IsTrue()) {
-		v8::Local<v8::Value> ret[] = {
+		Local<Value> ret[] = {
 			proxy->GetTarget(),
 			proxy->GetHandler()
 		};
 
-		args.GetReturnValue().Set(
-			v8::Array::New(args.GetIsolate(), ret, sizeof ret / sizeof ret[0])
-		);
+		args.GetReturnValue().Set(Array::New(isolate, ret, 2));
 	} else {
-		v8::Local<v8::Value> ret = proxy->GetTarget();
-
+		auto ret = proxy->GetTarget();
 		args.GetReturnValue().Set(ret);
 	}
 }
 
-void Init(v8::Local<v8::Object> exports) {
-	v8::Local<v8::Context> context = exports->CreationContext();
+NODE_MODULE_INIT()
+{
+	auto isolate = context->GetIsolate();
 
-	exports->Set(context, Nan::New("getPromiseDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetPromiseDetails)->GetFunction(context).ToLocalChecked());
-	exports->Set(context, Nan::New("getProxyDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetProxyDetails)->GetFunction(context).ToLocalChecked());
+	exports->Set(context,
+		String::NewFromUtf8(isolate, "getPromiseDetails").ToLocalChecked(),
+		FunctionTemplate::New(isolate, GetPromiseDetails)->GetFunction(context).ToLocalChecked());
+	exports->Set(context,
+		String::NewFromUtf8(isolate, "getProxyDetails").ToLocalChecked(),
+		FunctionTemplate::New(isolate, GetProxyDetails)->GetFunction(context).ToLocalChecked());
 }
-
-NODE_MODULE(type, Init);
