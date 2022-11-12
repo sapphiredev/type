@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.2.6](https://github.com/sapphiredev/type/compare/v2.2.5...v2.2.6) - (2022-11-12)
+
+## 🐛 Bug Fixes
+
+- Fixed prebuild target (#421) ([1d8887e](https://github.com/sapphiredev/type/commit/1d8887e394b574ebc1b6efc9ee49f302153b2926))
+
 # [2.2.5](https://github.com/sapphiredev/type/compare/v2.2.4...v2.2.5) - (2022-11-06)
 
 ## 🐛 Bug Fixes

@@ -1,6 +1,6 @@
 {
 	"name": "@sapphire/type",
-	"version": "2.2.5",
+	"version": "2.2.6",
 	"description": "A type detection utility for JavaScript",
 	"author": "@sapphire",
 	"license": "MIT",
