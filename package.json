@@ -33,10 +33,11 @@
 	},
 	"binary": {
 		"module_name": "type",
-		"module_path": "./prebuild/{node_abi}-{platform}-{arch}-{libc}-{libc_version}/",
+		"module_path": "./prebuild/{module_name}-{node_abi}-{platform}-{arch}-{libc}-{libc_version}/",
 		"host": "https://github.com/sapphiredev/type/releases/download/",
 		"remote_path": "v{version}",
-		"package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}-{libc}-{libc_version}.tar.gz"
+		"package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}-{libc}-{libc_version}.tar.gz",
+		"pkg_path": "."
 	},
 	"dependencies": {
 		"@discordjs/node-pre-gyp": "^0.4.5",
