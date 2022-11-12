@@ -5,6 +5,10 @@ on:
     types:
       - published
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build_x86_64:
     name: Prebuild x86_64 Node v${{ matrix.node }} on ${{ matrix.os }}
