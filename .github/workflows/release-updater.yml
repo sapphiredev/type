@@ -133,7 +133,7 @@ jobs:
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
 
       - name: Make TypeScript Build
-        run: yarn ts:build
+        run: yarn ts:build && yarn ts:esm
 
       - name: Upload prebuild asset
         uses: icrawl/action-artifact@v2
@@ -170,7 +170,7 @@ jobs:
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
 
       - name: Make TypeScript Build
-        run: yarn ts:build
+        run: yarn ts:build && yarn ts:esm
 
       - name: Upload prebuild asset
         uses: icrawl/action-artifact@v2
@@ -213,7 +213,7 @@ jobs:
           yarn node-pre-gyp --target_arch=arm64 configure build package
 
       - name: Make TypeScript Build
-        run: yarn ts:build
+        run: yarn ts:build && yarn ts:esm
 
       - name: Upload prebuild asset
         uses: icrawl/action-artifact@v2

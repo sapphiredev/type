@@ -1,6 +1,3 @@
 {
-	"extends": "@sapphire/ts-config",
-	"compilerOptions": {
-		"incremental": false
-	}
+	"extends": "@sapphire/ts-config"
 }

@@ -134,7 +134,7 @@ jobs:
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
 
       - name: Make TypeScript Build
-        run: yarn ts:build
+        run: yarn ts:build && yarn ts:esm
 
   build_aarch64_node_ge_18:
     name: Build aarch64 node >= 18
@@ -170,7 +170,7 @@ jobs:
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
 
       - name: Make TypeScript Build
-        run: yarn ts:build
+        run: yarn ts:build && yarn ts:esm
 
   build_musl_aarch64:
     name: Build aarch64(musl)
@@ -212,4 +212,4 @@ jobs:
           yarn node-pre-gyp --target_arch=arm64 configure build package
 
       - name: Make TypeScript Build
-        run: yarn ts:build
+        run: yarn ts:build && yarn ts:esm
