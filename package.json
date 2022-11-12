@@ -32,18 +32,15 @@
 	},
 	"binary": {
 		"module_name": "type",
-		"module_path": "./prebuild/{module_name}-{node_abi}-napi-v{napi_build_version}-{platform}-{arch}-{libc}-{libc_version}/",
+		"module_path": "./prebuild/{module_name}-{node_abi}-{platform}-{arch}-{libc}-{libc_version}/",
 		"host": "https://github.com/sapphiredev/type/releases/download/",
 		"remote_path": "v{version}",
-		"package_name": "{module_name}-v{version}-{node_abi}-napi-v{napi_build_version}-{platform}-{arch}-{libc}-{libc_version}.tar.gz",
-		"pkg_path": ".",
-		"napi_versions": [
-			3
-		]
+		"package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}-{libc}-{libc_version}.tar.gz",
+		"pkg_path": "."
 	},
 	"dependencies": {
 		"@discordjs/node-pre-gyp": "^0.4.5",
-		"node-addon-api": "^5.0.0"
+		"nan": "^2.17.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.2.0",
@@ -105,8 +102,5 @@
 	},
 	"gypfile": true,
 	"prettier": "@sapphire/prettier-config",
-	"packageManager": "yarn@3.2.4",
-	"volta": {
-		"node": "19.0.0"
-	}
+	"packageManager": "yarn@3.2.4"
 }

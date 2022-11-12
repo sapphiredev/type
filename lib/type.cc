@@ -45,11 +45,7 @@ void GetProxyDetails(const Nan::FunctionCallbackInfo<v8::Value>& args) {
 }
 
 void Init(v8::Local<v8::Object> exports) {
-	#if (V8_MAJOR_VERSION >= 10 && V8_MINOR_VERSION >= 7 && V8_BUILD_NUMBER >= 193)
-		auto context = exports->GetCreationContext();
-	#else
-		auto context = exports->CreationContext();
-	#endif
+	v8::Local<v8::Context> context = exports->CreationContext();
 
 	exports->Set(context, Nan::New("getPromiseDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetPromiseDetails)->GetFunction(context).ToLocalChecked());
 	exports->Set(context, Nan::New("getProxyDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetProxyDetails)->GetFunction(context).ToLocalChecked());
