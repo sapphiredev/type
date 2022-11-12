@@ -43,7 +43,7 @@ jobs:
         run: yarn test
 
   test_x86_64_node_ge_18:
-    name: Test x86_64 node >= 18
+    name: Testing on x86_64 node >= 18
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -74,7 +74,7 @@ jobs:
         run: yarn test
 
   test_musl_x86_64:
-    name: Test x86_64(musl)
+    name: Testing on x86_64(musl)
     runs-on: ubuntu-latest
     container:
       image: node:${{ matrix.node }}-alpine
@@ -104,7 +104,7 @@ jobs:
         run: yarn test
 
   test_aarch64:
-    name: Test aarch64
+    name: Testing on aarch64
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -140,7 +140,7 @@ jobs:
         run: yarn vitest run
 
   build_aarch64_node_ge_18:
-    name: Test aarch64 node >= 18
+    name: Testing on aarch64 node >= 18
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -176,7 +176,7 @@ jobs:
         run: yarn vitest run
 
   build_musl_aarch64:
-    name: Test aarch64(musl)
+    name: Testing on aarch64(musl)
     runs-on: ubuntu-latest
     container:
       image: node:${{ matrix.node }}-alpine
