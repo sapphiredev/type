@@ -74,6 +74,7 @@
 	"files": [
 		"lib",
 		"dist",
+		"!dist/*.tsbuildinfo",
 		"binding.gyp"
 	],
 	"repository": {
