@@ -1,4 +1,4 @@
-name: Continuous Integration - Testing
+name: Continuous Integration - Build & Test
 
 on:
   push:
@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test_x86_64:
-    name: Testing on x86_64 Node v${{ matrix.node }} on ${{ matrix.os }}
+  build_test_x86_64:
+    name: Build and Test x86_64 Node v${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -36,14 +36,14 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable --mode=skip-build
 
-      - name: Build From Source
-        run: yarn gyp:build-from-source
+      - name: Build Code
+        run: yarn build
 
       - name: Test Code
-        run: yarn test
+        run: yarn vitest run
 
-  test_x86_64_node_ge_18:
-    name: Testing on x86_64 node >= 18
+  build_test_x86_64_node_ge_18:
+    name: Build and Test x86_64 node >= 18
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -70,11 +70,14 @@ jobs:
       - name: Build From Source
         run: yarn gyp:build-from-source
 
-      - name: Run Tests
-        run: yarn test
+      - name: Package build
+        run: yarn build
 
-  test_musl_x86_64:
-    name: Testing on x86_64(musl)
+      - name: Test Code
+        run: yarn vitest run
+
+  build_test_musl_x86_64:
+    name: Build and Test x86_64(musl)
     runs-on: ubuntu-latest
     container:
       image: node:${{ matrix.node }}-alpine
@@ -100,11 +103,14 @@ jobs:
       - name: Build From Source
         run: yarn gyp:build-from-source
 
-      - name: Run Tests
-        run: yarn test
+      - name: Package build
+        run: yarn build
 
-  test_aarch64:
-    name: Testing on aarch64
+      - name: Test Code
+        run: yarn vitest run
+
+  build_test_aarch64:
+    name: Build and Test aarch64
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -131,16 +137,19 @@ jobs:
       - name: Build From Source
         run: yarn gyp:build-from-source
 
-      - name: Build and package native code
+      - name: Package build
         run: |
           sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
 
-      - name: Run Tests
+      - name: Make TypeScript Build
+        run: yarn ts:build && yarn ts:esm
+
+      - name: Test Code
         run: yarn vitest run
 
-  build_aarch64_node_ge_18:
-    name: Testing on aarch64 node >= 18
+  build_test_aarch64_node_ge_18:
+    name: Build and Test aarch64 node >= 18
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -167,16 +176,19 @@ jobs:
       - name: Build From Source
         run: yarn gyp:build-from-source
 
-      - name: Build and package native code
+      - name: Package build
         run: |
           sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
 
-      - name: Run Tests
+      - name: Make TypeScript Build
+        run: yarn ts:build && yarn ts:esm
+
+      - name: Test Code
         run: yarn vitest run
 
-  build_musl_aarch64:
-    name: Testing on aarch64(musl)
+  build_test_musl_aarch64:
+    name: Build and Test aarch64(musl)
     runs-on: ubuntu-latest
     container:
       image: node:${{ matrix.node }}-alpine
@@ -208,11 +220,14 @@ jobs:
       - name: Build From Source
         run: yarn gyp:build-from-source
 
-      - name: Build and package native code
+      - name: Package build
         run: |
           CC=$(pwd)/aarch64-linux-musl-cross/bin/aarch64-linux-musl-gcc \
           CXX=$(pwd)/aarch64-linux-musl-cross/bin/aarch64-linux-musl-g++ \
           yarn node-pre-gyp --target_arch=arm64 configure build package
 
-      - name: Run Tests
+      - name: Make TypeScript Build
+        run: yarn ts:build && yarn ts:esm
+
+      - name: Test Code
         run: yarn vitest run
