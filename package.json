@@ -19,17 +19,15 @@
 		"docs": "typedoc-json-parser",
 		"test": "yarn gyp:configure && yarn gyp:build && vitest run",
 		"lint": "eslint src tests --ext ts --fix",
+		"ts:build": "tsc -b src",
 		"build": "yarn gyp:configure && yarn ts:build && yarn gyp:build && yarn gyp:package && gen-esm-wrapper dist/index.js dist/index.mjs",
-		"bump": "cliff-jumper",
-		"check-update": "cliff-jumper --dry-run",
 		"prepack": "yarn build",
 		"install": "node-pre-gyp install --fallback-to-build",
-		"ts:build": "tsc -b src",
-		"gyp:rebuild": "node-pre-gyp rebuild",
 		"gyp:configure": "node-pre-gyp configure",
 		"gyp:build": "node-pre-gyp build",
 		"gyp:package": "node-pre-gyp package",
-		"gyp:prebuild": "node-pre-gyp configure install build package --fallback-to-build"
+		"bump": "cliff-jumper",
+		"check-update": "cliff-jumper --dry-run"
 	},
 	"binary": {
 		"module_name": "type",
