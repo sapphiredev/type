@@ -1,12 +1,8 @@
 {
 	"extends": "../tsconfig.base.json",
 	"compilerOptions": {
-		"target": "ES2020",
-		"rootDir": "./",
-		"outDir": "./build",
-		"tsBuildInfoFile": "./build/.tsbuildinfo",
+		"noEmit": true,
 		"types": ["vitest/globals"]
 	},
-	"include": ["./", "../src/node-pre-gyp.d.ts"],
-	"references": [{ "path": "../src" }]
+	"include": ["./", "../src"]
 }

@@ -1,5 +1,5 @@
 import { find } from '@discordjs/node-pre-gyp';
-import { resolve, join } from 'path';
+import { join, resolve } from 'node:path';
 
 declare namespace Internals {
 	export function getPromiseDetails(thing: any): number[];
