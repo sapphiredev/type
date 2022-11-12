@@ -1,17 +1,18 @@
-name: Release Updater
+name: Continuous Integration - Build & Test
 
 on:
-  release:
-    types:
-      - published
+  push:
+    branches:
+      - main
+  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build_x86_64:
-    name: Prebuild x86_64 Node v${{ matrix.node }} on ${{ matrix.os }}
+  build_test_x86_64:
+    name: Build and Test x86_64 Node v${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -22,6 +23,9 @@ jobs:
       - name: Checkout Project
         uses: actions/checkout@v3
 
+      - name: Add problem matcher
+        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
+
       - name: Use Node.js v${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
@@ -30,20 +34,16 @@ jobs:
           registry-url: https://registry.yarnpkg.org/
 
       - name: Install Dependencies
-        run: yarn --immutable
+        run: yarn --immutable --mode=skip-build
 
-      - name: Package prebuild
+      - name: Build Code
         run: yarn build
 
-      - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: 'build/stage/**/*.tar.gz'
+      - name: Test Code
+        run: yarn vitest run
 
-  build_x86_64_node_ge_18:
-    name: Build x86_64 node >= 18
+  build_test_x86_64_node_ge_18:
+    name: Build and Test x86_64 node >= 18
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -54,6 +54,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Add problem matcher
+        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
+
       - name: Use Node.js v${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
@@ -62,20 +65,19 @@ jobs:
           registry-url: https://registry.yarnpkg.org/
 
       - name: Install dependencies
-        run: yarn --immutable
+        run: yarn --immutable --mode=skip-build
 
-      - name: Package prebuild
+      - name: Build From Source
+        run: yarn gyp:build-from-source
+
+      - name: Package build
         run: yarn build
 
-      - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: 'build/stage/**/*.tar.gz'
+      - name: Test Code
+        run: yarn vitest run
 
-  build_musl_x86_64:
-    name: Prebuild x86_64(musl)
+  build_test_musl_x86_64:
+    name: Build and Test x86_64(musl)
     runs-on: ubuntu-latest
     container:
       image: node:${{ matrix.node }}-alpine
@@ -92,21 +94,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: yarn --immutable
+      - name: Add problem matcher
+        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
 
-      - name: Package prebuild
+      - name: Install dependencies
+        run: yarn --immutable --mode=skip-build
+
+      - name: Build From Source
+        run: yarn gyp:build-from-source
+
+      - name: Package build
         run: yarn build
 
-      - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: 'build/stage/**/*.tar.gz'
+      - name: Test Code
+        run: yarn vitest run
 
-  build_aarch64:
-    name: Prebuild aarch64
+  build_test_aarch64:
+    name: Build and Test aarch64
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -117,6 +121,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Add problem matcher
+        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
+
       - name: Use Node.js v${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
@@ -125,9 +132,12 @@ jobs:
           registry-url: https://registry.yarnpkg.org/
 
       - name: Install dependencies
-        run: yarn --immutable
+        run: yarn --immutable --mode=skip-build
 
-      - name: Package prebuild
+      - name: Build From Source
+        run: yarn gyp:build-from-source
+
+      - name: Package build
         run: |
           sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
@@ -135,15 +145,11 @@ jobs:
       - name: Make TypeScript Build
         run: yarn ts:build && yarn ts:esm
 
-      - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: 'build/stage/**/*.tar.gz'
+      - name: Test Code
+        run: yarn vitest run
 
-  build_aarch64_node_ge_18:
-    name: Prebuild aarch64 node >= 18
+  build_test_aarch64_node_ge_18:
+    name: Build and Test aarch64 node >= 18
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -154,6 +160,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Add problem matcher
+        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
+
       - name: Use Node.js v${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
@@ -162,9 +171,12 @@ jobs:
           registry-url: https://registry.yarnpkg.org/
 
       - name: Install dependencies
-        run: yarn --immutable
+        run: yarn --immutable --mode=skip-build
 
-      - name: Package prebuild
+      - name: Build From Source
+        run: yarn gyp:build-from-source
+
+      - name: Package build
         run: |
           sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
@@ -172,15 +184,11 @@ jobs:
       - name: Make TypeScript Build
         run: yarn ts:build && yarn ts:esm
 
-      - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: 'build/stage/**/*.tar.gz'
+      - name: Test Code
+        run: yarn vitest run
 
-  build_musl_aarch64:
-    name: Prebuild aarch64(musl)
+  build_test_musl_aarch64:
+    name: Build and Test aarch64(musl)
     runs-on: ubuntu-latest
     container:
       image: node:${{ matrix.node }}-alpine
@@ -197,6 +205,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Add problem matcher
+        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
+
       - name: Setup musl cross compiler
         run: |
           curl -OL https://musl.cc/aarch64-linux-musl-cross.tgz
@@ -204,9 +215,12 @@ jobs:
           $(pwd)/aarch64-linux-musl-cross/bin/aarch64-linux-musl-gcc --version
 
       - name: Install dependencies
-        run: yarn --immutable
+        run: yarn --immutable --mode=skip-build
 
-      - name: Package prebuild
+      - name: Build From Source
+        run: yarn gyp:build-from-source
+
+      - name: Package build
         run: |
           CC=$(pwd)/aarch64-linux-musl-cross/bin/aarch64-linux-musl-gcc \
           CXX=$(pwd)/aarch64-linux-musl-cross/bin/aarch64-linux-musl-g++ \
@@ -215,28 +229,5 @@ jobs:
       - name: Make TypeScript Build
         run: yarn ts:build && yarn ts:esm
 
-      - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: 'build/stage/**/*.tar.gz'
-
-  Crosspost:
-    name: Release Crosspost
-    runs-on: ubuntu-latest
-    steps:
-      - name: Parse release name
-        id: get_release_name
-        run: echo ::set-output name=release_name::${RELEASE:-$TAG}
-        env:
-          RELEASE: ${{ github.event.release.name }}
-          TAG: ${{ github.event.release.tag_name }}
-
-      - name: Send Release Message
-        id: crosspost_action
-        uses: kludge-cs/gitcord-release-changelogger@5592170408dc081d7cb6a74ce025911bd1fcb7c3 # renovate: tag=v3.0.0
-        with:
-          webhook-url: ${{ secrets.RELEASE_WEBHOOK }}
-          release-body: ${{ github.event.release.body }}
-          release-name: ${{ steps.get_release_name.outputs.release_name }}
+      - name: Test Code
+        run: yarn vitest run

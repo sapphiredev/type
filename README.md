@@ -13,27 +13,39 @@
 
 </div>
 
+---
+
+**_Note: We currently do not support NodeJS version 19 and above. This is currently not possible because we're using the
+[`nan`][nan] package for NodeJS internal bindings and [`nan`][nan] currently does not support NodeJS version 19 and
+above._**
+
+[nan]: https://github.com/nodejs/nan
+
+---
+
 **Table of Contents**
 
--   [@sapphire/type](#sapphiretype)
-    -   [Description](#description)
-    -   [Features](#features)
-    -   [Installation](#installation)
-    -   [Usage](#usage)
-        -   [Basic Usage](#basic-usage)
-    -   [Buy us some doughnuts](#buy-us-some-doughnuts)
-    -   [Contributors ✨](#contributors-%E2%9C%A8)
+- [@sapphire/type](#sapphiretype)
+  - [Description](#description)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Basic Usage](#basic-usage)
+  - [Buy us some doughnuts](#buy-us-some-doughnuts)
+  - [Contributors ✨](#contributors-%E2%9C%A8)
 
 ## Description
 
-Sometimes there is a need to know what a value's type of something is, this package exists to satisfy those needs by implementing a parser that can retrieve the type of the value recursively and process a string similar to TypeScript's types.
+Sometimes there is a need to know what a value's type of something is, this package exists to satisfy those needs by
+implementing a parser that can retrieve the type of the value recursively and process a string similar to TypeScript's
+types.
 
 ## Features
 
--   Written in TypeScript
--   Bundled with Rollup so it can be used in NodeJS and browsers
--   Offers CommonJS, ESM and UMD bundles
--   Fully tested
+- Written in TypeScript
+- Bundled with Rollup so it can be used in NodeJS and browsers
+- Offers CommonJS, ESM and UMD bundles
+- Fully tested
 
 ## Installation
 
@@ -44,11 +56,13 @@ yarn add @sapphire/type
 
 ## Usage
 
-**Note:** While this section uses `require`, the imports match 1:1 with ESM imports. For example `const { Type } = require('@sapphire/type')` equals `import { Type } from '@sapphire/type'`.
+**Note:** While this section uses `require`, the imports match 1:1 with ESM imports. For example
+`const { Type } = require('@sapphire/type')` equals `import { Type } from '@sapphire/type'`.
 
 **Note:** When using ESM syntax you can also default-import `Type` class: `import Type from '@sapphire/type'`.
 
-**Note:** The internal functions of `getPromiseDetails` and `getProxyDetails` are also exported. If you don't know what these are, then you need not be concerned about this.
+**Note:** The internal functions of `getPromiseDetails` and `getProxyDetails` are also exported. If you don't know what
+these are, then you need not be concerned about this.
 
 ### Basic Usage
 
@@ -67,9 +81,11 @@ console.log(type.toString());
 
 ## Buy us some doughnuts
 
-Sapphire Community is and always will be open source, even if we don't get donations. That being said, we know there are amazing people who may still want to donate just to show their appreciation. Thank you very much in advance!
+Sapphire Community is and always will be open source, even if we don't get donations. That being said, we know there are
+amazing people who may still want to donate just to show their appreciation. Thank you very much in advance!
 
-We accept donations through Open Collective, Ko-fi, PayPal, Patreon and GitHub Sponsorships. You can use the buttons below to donate through your method of choice.
+We accept donations through Open Collective, Ko-fi, PayPal, Patreon and GitHub Sponsorships. You can use the buttons
+below to donate through your method of choice.
 
 |   Donate With   |                       Address                       |
 | :-------------: | :-------------------------------------------------: |
@@ -107,4 +123,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
+Contributions of any kind welcome!
