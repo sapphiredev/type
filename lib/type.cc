@@ -45,7 +45,7 @@ void GetProxyDetails(const Nan::FunctionCallbackInfo<v8::Value>& args) {
 }
 
 void Init(v8::Local<v8::Object> exports) {
-	v8::Local<v8::Context> context = exports->CreationContext();
+	v8::Local<v8::Context> context = exports->GetCreationContext();
 
 	exports->Set(context, Nan::New("getPromiseDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetPromiseDetails)->GetFunction(context).ToLocalChecked());
 	exports->Set(context, Nan::New("getProxyDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetProxyDetails)->GetFunction(context).ToLocalChecked());
