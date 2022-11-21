@@ -32,7 +32,7 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable --mode=skip-build
 
-      - name: Install node-gyp on windows-2019
+      - name: Install node-gyp on ${{ matrix.os }}
         if: ${{ matrix.os == 'windows-2019' || matrix.os == 'windows-2022' }}
         run: yarn add node-gyp
 
@@ -68,7 +68,7 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable --mode=skip-build
 
-      - name: Install node-gyp on windows-2019
+      - name: Install node-gyp on ${{ matrix.os }}
         if: ${{ matrix.os == 'windows-2019' || matrix.os == 'windows-2022' }}
         run: yarn add node-gyp
 
