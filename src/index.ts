@@ -9,9 +9,7 @@ declare namespace Internals {
 const bindingPath = find(resolve(join(__dirname, '..', './package.json')));
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const binding = require(bindingPath);
-
-export const { getPromiseDetails, getProxyDetails }: typeof Internals = binding;
+export const { getPromiseDetails, getProxyDetails } = require(bindingPath) as typeof Internals;
 
 /**
  * The class for deep checking Types
