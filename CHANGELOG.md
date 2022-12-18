@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.3.0](https://github.com/sapphiredev/type/compare/v2.2.6...v2.3.0) - (2022-12-18)
+
+## 🚀 Features
+
+- Add node 19 support (#428) ([f2d2dc6](https://github.com/sapphiredev/type/commit/f2d2dc6d9fc29f81bea0e04ed962062ef38154d9))
+
 # [2.2.6](https://github.com/sapphiredev/type/compare/v2.2.5...v2.2.6) - (2022-11-12)
 
 ## 🐛 Bug Fixes
