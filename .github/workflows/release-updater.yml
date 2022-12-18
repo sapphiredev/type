@@ -129,7 +129,8 @@ jobs:
 
       - name: Package prebuild
         run: |
-          sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+          sudo apt-get update
+          sudo apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
 
       - name: Make TypeScript Build
@@ -166,7 +167,8 @@ jobs:
 
       - name: Package prebuild
         run: |
-          sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+          sudo apt-get update
+          sudo apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
           CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++ yarn node-pre-gyp --target_arch=arm64 configure build package
 
       - name: Make TypeScript Build
