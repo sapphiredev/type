@@ -15,14 +15,6 @@
 
 ---
 
-**_Note: We currently do not support NodeJS version 19 and above. This is currently not possible because we're using the
-[`nan`][nan] package for NodeJS internal bindings and [`nan`][nan] currently does not support NodeJS version 19 and
-above._**
-
-[nan]: https://github.com/nodejs/nan
-
----
-
 **Table of Contents**
 
 - [@sapphire/type](#sapphiretype)
