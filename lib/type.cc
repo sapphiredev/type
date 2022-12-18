@@ -45,14 +45,14 @@ void GetProxyDetails(const Nan::FunctionCallbackInfo<v8::Value>& args) {
 }
 
 void Init(v8::Local<v8::Object> exports) {
-	#if V8_MAJOR_VERSION >= 9
-		auto context = exports->GetCreationContext().ToLocalChecked();
-	#else
-		auto context = exports->CreationContext();
-	#endif
+#if V8_MAJOR_VERSION >= 9
+	auto context = exports->GetCreationContext().ToLocalChecked();
+#else
+	auto context = exports->CreationContext();
+#endif
 
-		exports->Set(context, Nan::New("getPromiseDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetPromiseDetails)->GetFunction(context).ToLocalChecked());
-		exports->Set(context, Nan::New("getProxyDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetProxyDetails)->GetFunction(context).ToLocalChecked());
+	exports->Set(context, Nan::New("getPromiseDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetPromiseDetails)->GetFunction(context).ToLocalChecked());
+	exports->Set(context, Nan::New("getProxyDetails").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(GetProxyDetails)->GetFunction(context).ToLocalChecked());
 }
 
 NODE_MODULE(type, Init);
