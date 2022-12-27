@@ -7,6 +7,9 @@ export default defineConfig({
 		coverage: {
 			enabled: true,
 			reporter: ['text', 'lcov', 'clover']
+		},
+		deps: {
+			interopDefault: true
 		}
 	},
 	esbuild: {
