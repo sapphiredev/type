@@ -86,34 +86,14 @@ below to donate through your method of choice.
 |     Patreon     |    [Click Here](https://sapphirejs.dev/patreon)     |
 |     PayPal      |     [Click Here](https://sapphirejs.dev/paypal)     |
 
-## Contributors ✨
+## Contributors
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Please make sure to read the [Contributing Guide][contributing] before making a pull request.
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://favware.tech/"><img src="https://avatars.githubusercontent.com/u/4019718?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeroen Claassens</b></sub></a><br /><a href="https://github.com/sapphiredev/type/commits?author=favna" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/PyroTechniac"><img src="https://avatars.githubusercontent.com/u/39341355?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gryffon Bellish</b></sub></a><br /><a href="https://github.com/sapphiredev/type/commits?author=PyroTechniac" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/apps/depfu"><img src="https://avatars.githubusercontent.com/in/715?v=4?s=100" width="100px;" alt=""/><br /><sub><b>depfu[bot]</b></sub></a><br /><a href="#maintenance-depfu[bot]" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/apps/dependabot"><img src="https://avatars.githubusercontent.com/in/29110?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dependabot[bot]</b></sub></a><br /><a href="#maintenance-dependabot[bot]" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/VoltrexMaster"><img src="https://avatars.githubusercontent.com/u/62040526?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Voltrex</b></sub></a><br /><a href="https://github.com/sapphiredev/type/commits?author=VoltrexMaster" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/vladfrangu"><img src="https://avatars.githubusercontent.com/u/17960496?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vlad Frangu</b></sub></a><br /><a href="#maintenance-vladfrangu" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/apps/renovate"><img src="https://avatars.githubusercontent.com/in/2740?v=4?s=100" width="100px;" alt=""/><br /><sub><b>renovate[bot]</b></sub></a><br /><a href="#maintenance-renovate[bot]" title="Maintenance">🚧</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/Lioness100"><img src="https://avatars.githubusercontent.com/u/65814829?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Lioness100</b></sub></a><br /><a href="https://github.com/sapphiredev/type/commits?author=Lioness100" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/RealShadowNova"><img src="https://avatars.githubusercontent.com/u/46537907?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hezekiah Hendry</b></sub></a><br /><a href="#tool-RealShadowNova" title="Tools">🔧</a></td>
-    <td align="center"><a href="https://github.com/apps/allcontributors"><img src="https://avatars.githubusercontent.com/in/23186?v=4?s=100" width="100px;" alt=""/><br /><sub><b>allcontributors[bot]</b></sub></a><br /><a href="#maintenance-allcontributors[bot]" title="Maintenance">🚧</a></td>
-  </tr>
-</table>
+Thank you to all the people who already contributed to Sapphire!
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+<a href="https://github.com/sapphiredev/type/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sapphiredev/type" />
+</a>
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
-Contributions of any kind welcome!
+[contributing]: https://github.com/sapphiredev/.github/blob/main/.github/CONTRIBUTING.md
