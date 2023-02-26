@@ -2,7 +2,7 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	test: {
-		threads: false,
+		singleThread: true,
 		globals: true,
 		coverage: {
 			enabled: true,
