@@ -14,6 +14,7 @@ jobs:
   build_test_x86_64:
     name: Build and Test x86_64 Node v${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
@@ -48,6 +49,7 @@ jobs:
   build_test_x86_64_node_ge_18:
     name: Build and Test x86_64 node >= 18
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
@@ -82,6 +84,7 @@ jobs:
   build_test_musl_x86_64:
     name: Build and Test x86_64(musl)
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     container:
       image: node:${{ matrix.node }}-alpine
     strategy:
@@ -115,6 +118,7 @@ jobs:
   build_test_aarch64:
     name: Build and Test aarch64
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 10	
     strategy:
       fail-fast: false
       matrix:
@@ -155,6 +159,7 @@ jobs:
   build_test_aarch64_node_ge_18:
     name: Build and Test aarch64 node >= 18
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
@@ -195,6 +200,7 @@ jobs:
   build_test_musl_aarch64:
     name: Build and Test aarch64(musl)
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     container:
       image: node:${{ matrix.node }}-alpine
     strategy:
