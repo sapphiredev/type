@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.4.0](https://github.com/sapphiredev/type/compare/v2.3.0...v2.4.0) - (2023-04-23)
+
+## 🐛 Bug Fixes
+
+- **ci:** Include `build-from-source` step in x86-64 build (#430) ([2d44dfc](https://github.com/sapphiredev/type/commit/2d44dfc16350ec931c2c708557fd80fce3cafa36))
+
+## 🚀 Features
+
+- Add prebuilts for NodeJS v20 (and drop prebuilts for 12, 14, 15, and 17) (#452) ([5ac4c42](https://github.com/sapphiredev/type/commit/5ac4c4202b3edcda62c95567e107a19dde5b8ed2))
+
 # [2.3.0](https://github.com/sapphiredev/type/compare/v2.2.6...v2.3.0) - (2022-12-18)
 
 ## 🚀 Features
