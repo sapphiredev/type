@@ -82,7 +82,7 @@ jobs:
 
   build_musl_x86_64:
     name: Prebuild x86_64(musl)
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container:
       image: node:${{ matrix.node }}-alpine
     strategy:
@@ -198,7 +198,7 @@ jobs:
 
   build_musl_aarch64:
     name: Prebuild aarch64(musl)
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container:
       image: node:${{ matrix.node }}-alpine
     strategy:

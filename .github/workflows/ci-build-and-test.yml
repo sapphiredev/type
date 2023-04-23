@@ -83,7 +83,7 @@ jobs:
 
   build_test_musl_x86_64:
     name: Build and Test x86_64(musl)
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     container:
       image: node:${{ matrix.node }}-alpine
@@ -199,7 +199,7 @@ jobs:
 
   build_test_musl_aarch64:
     name: Build and Test aarch64(musl)
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     container:
       image: node:${{ matrix.node }}-alpine
