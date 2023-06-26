@@ -13,9 +13,12 @@ debug(`Commit: ${context.sha}`);
 
 const { owner, repo } = context.repo;
 
-const release_id = getInput('release-tag', { required: false }) || context.payload.release.id;
+const release_id = getInput('release-tag', { required: false }) || context.payload.release?.id;
 
 debug(`Release id: ${release_id}`);
+debug(`Resolved from input: ${getInput('release-tag', { required: false })}`);
+debug(`Resolved from context: ${context.payload.release?.id}`);
+debug(`Context payload: ${JSON.stringify(context.payload)}`);
 
 let upload_url;
 try {

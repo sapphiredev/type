@@ -44,13 +44,7 @@ jobs:
         uses: ./scripts/prebuildArtifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: 'build/stage/**/*.tar.gz'
-
-      - name: Upload prebuild asset
-        uses: ./scripts/prebuildArtifacts
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTIONS_STEP_DEBUG: true
         with:
           path: 'build/stage/**/*.tar.gz'
           release-tag: ${{ github.event.inputs.tag }}
