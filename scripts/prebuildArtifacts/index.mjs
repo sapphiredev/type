@@ -23,7 +23,8 @@ try {
 		data: { upload_url }
 	} = await octokit.rest.repos.getRelease({ owner, repo, release_id }));
 } catch (error) {
-	return setFailed(error);
+	setFailed(error);
+	process.exit(1);
 }
 
 const globber = await create(path);

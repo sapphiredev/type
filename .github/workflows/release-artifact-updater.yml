@@ -1,4 +1,4 @@
-name: Release Updater
+name: Manual Asset Updater
 
 on:
   workflow_dispatch:
