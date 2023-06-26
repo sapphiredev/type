@@ -17,7 +17,6 @@ const { owner, repo } = context.repo;
 /** @type {string} */
 let release_id;
 
-debug(`tag from input: ${getInput('release-tag', { required: false })}`);
 if (tagFromInput) {
 	const response = await octokit.rest.repos.getReleaseByTag({ owner, repo, tag: tagFromInput });
 
@@ -30,8 +29,6 @@ if (tagFromInput) {
 } else {
 	release_id = context.payload.release?.id;
 }
-
-debug(`Release id: ${release_id}`);
 
 /** @type {string} */
 let upload_url;
