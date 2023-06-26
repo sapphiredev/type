@@ -1,0 +1,19 @@
+name: Upload Release Artifact
+description: Upload artifacts to releases
+branding:
+  icon: check-circle
+  color: yellow
+inputs:
+  path:
+    description: Glob-like pattern for the path
+    required: true
+  release-tag:
+    description: Tag of the release
+    required: false
+  content-type:
+    description: Content type of the artifact
+    required: false
+    default: application/octet-stream
+runs:
+  using: node16
+  main: index.mjs
