@@ -7,19 +7,33 @@ const { GITHUB_TOKEN } = process.env;
 
 const path = getInput('path', { required: true });
 const contentType = getInput('content-type', { required: true });
+const tagFromInput = getInput('release-tag', { required: false });
 
 const octokit = getOctokit(GITHUB_TOKEN);
 debug(`Commit: ${context.sha}`);
 
 const { owner, repo } = context.repo;
 
-const release_id = getInput('release-tag', { required: false }) || context.payload.release?.id;
+/** @type {string} */
+let release_id;
+
+debug(`tag from input: ${getInput('release-tag', { required: false })}`);
+if (tagFromInput) {
+	const response = await octokit.rest.repos.getReleaseByTag({ owner, repo, tag: tagFromInput });
+
+	if (response.status !== 200) {
+		setFailed(`Failed to get release by tag: ${response.status}`);
+		process.exit(1);
+	}
+
+	release_id = response.data.id;
+} else {
+	release_id = context.payload.release?.id;
+}
 
 debug(`Release id: ${release_id}`);
-debug(`Resolved from input: ${getInput('release-tag', { required: false })}`);
-debug(`Resolved from context: ${context.payload.release?.id}`);
-debug(`Context payload: ${JSON.stringify(context.payload)}`);
 
+/** @type {string} */
 let upload_url;
 try {
 	({
