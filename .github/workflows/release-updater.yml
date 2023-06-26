@@ -39,7 +39,7 @@ jobs:
         run: yarn build
 
       - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
+        uses: ./scripts/prebuildArtifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -74,7 +74,7 @@ jobs:
         run: yarn build
 
       - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
+        uses: ./scripts/prebuildArtifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -108,7 +108,7 @@ jobs:
         run: yarn build
 
       - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
+        uses: ./scripts/prebuildArtifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -149,7 +149,7 @@ jobs:
         run: yarn ts:build && yarn ts:esm
 
       - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
+        uses: ./scripts/prebuildArtifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -190,7 +190,7 @@ jobs:
         run: yarn ts:build && yarn ts:esm
 
       - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
+        uses: ./scripts/prebuildArtifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -236,7 +236,7 @@ jobs:
         run: yarn ts:build && yarn ts:esm
 
       - name: Upload prebuild asset
-        uses: icrawl/action-artifact@v2
+        uses: ./scripts/prebuildArtifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
