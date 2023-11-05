@@ -105,8 +105,7 @@
 	},
 	"resolutions": {
 		"ansi-regex": "^5.0.1",
-		"minimist": "^1.2.8",
-		"node-gyp": "10.0.1"
+		"minimist": "^1.2.8"
 	},
 	"commitlint": {
 		"extends": [
