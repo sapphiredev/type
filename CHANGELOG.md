@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.4.1](https://github.com/sapphiredev/type/compare/v2.4.1...v2.4.1) - (2023-11-05)
+
+## 🐛 Bug Fixes
+
+- **deps:** Update prebuilts, drop node 16 prebuilts, update for node-gyp v10.x and Python 3.12 (#500) ([ffcc607](https://github.com/sapphiredev/type/commit/ffcc60704fba58f855408fcb8d69c9c906f13f1e))
+
 # [2.4.0](https://github.com/sapphiredev/type/compare/v2.3.0...v2.4.0) - (2023-04-23)
 
 ## 🐛 Bug Fixes
