@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.4.2](https://github.com/sapphiredev/type/compare/v2.4.2...v2.4.2) - (2023-12-04)
+
+## 🐛 Bug Fixes
+
+- Properly split CJS and ESM ([3b42e83](https://github.com/sapphiredev/type/commit/3b42e837c50d760190f95b2c9e788d424176ee89))
+
 # [2.4.1](https://github.com/sapphiredev/type/compare/v2.4.1...v2.4.1) - (2023-11-05)
 
 ## 🐛 Bug Fixes
