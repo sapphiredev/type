@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.4.3](https://github.com/sapphiredev/type/compare/v2.4.3...v2.4.3) - (2023-12-05)
+
+## 🐛 Bug Fixes
+
+- Triple ESM fix (#508) ([f0760bc](https://github.com/sapphiredev/type/commit/f0760bc57956007c5caed06d7305aadfd3cafbe6))
+
 # [2.4.2](https://github.com/sapphiredev/type/compare/v2.4.2...v2.4.2) - (2023-12-04)
 
 ## 🐛 Bug Fixes
