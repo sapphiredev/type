@@ -1,4 +1,4 @@
-import { getPromiseDetails, getProxyDetails } from '../src';
+import { getPromiseDetails, getProxyDetails } from '../src/lib/index.js';
 
 describe('Internals', () => {
 	describe('getPromiseDetails', () => {
