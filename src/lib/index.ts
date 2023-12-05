@@ -1,12 +1,15 @@
-import { find } from '@discordjs/node-pre-gyp';
-import { join, resolve } from 'path';
+// Note that this is in a subfolder within src to mimick that when compiled it will be put in dist/{cjs,esm} which is
+// equally a subfolder within dist. This is to ensure that the import path to the package.json is correct.
+
+import nodePreGyp from '@discordjs/node-pre-gyp';
+import { join, resolve } from 'node:path';
 
 declare namespace Internals {
 	export function getPromiseDetails(thing: any): number[];
 	export function getProxyDetails(thing: any): number[];
 }
 
-const bindingPath = find(resolve(join(__dirname, '..', './package.json')));
+const bindingPath = nodePreGyp.find(resolve(join(__dirname, '..', '..', './package.json')));
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 export const { getPromiseDetails, getProxyDetails } = require(bindingPath) as typeof Internals;
