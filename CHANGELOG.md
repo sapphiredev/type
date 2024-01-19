@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.4.4](https://github.com/sapphiredev/type/compare/v2.4.4...v2.4.4) - (2024-01-19)
+
+## 🐛 Bug Fixes
+
+- Fixed commonjs typings export mapping (#526) ([b7787cb](https://github.com/sapphiredev/type/commit/b7787cb356f907a6867105314795b0916ff18363))
+
 # [2.4.3](https://github.com/sapphiredev/type/compare/v2.4.3...v2.4.3) - (2023-12-05)
 
 ## 🐛 Bug Fixes
