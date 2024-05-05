@@ -61,10 +61,10 @@
 		"@sapphire/eslint-config": "^5.0.4",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^20.12.7",
-		"@typescript-eslint/eslint-plugin": "^7.7.1",
-		"@typescript-eslint/parser": "^7.7.1",
-		"@vitest/coverage-v8": "^1.5.2",
+		"@types/node": "^20.12.8",
+		"@typescript-eslint/eslint-plugin": "^7.8.0",
+		"@typescript-eslint/parser": "^7.8.0",
+		"@vitest/coverage-v8": "^1.6.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
@@ -75,8 +75,8 @@
 		"typedoc": "^0.25.13",
 		"typedoc-json-parser": "^10.0.0",
 		"typescript": "^5.4.5",
-		"vite": "^5.2.10",
-		"vitest": "^1.5.2"
+		"vite": "^5.2.11",
+		"vitest": "^1.6.0"
 	},
 	"files": [
 		"lib",
@@ -126,5 +126,5 @@
 		}
 	},
 	"gypfile": true,
-	"packageManager": "yarn@4.1.1"
+	"packageManager": "yarn@4.2.1"
 }
