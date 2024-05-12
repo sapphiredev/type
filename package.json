@@ -61,7 +61,7 @@
 		"@sapphire/eslint-config": "^5.0.4",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^20.12.8",
+		"@types/node": "^20.12.11",
 		"@typescript-eslint/eslint-plugin": "^7.8.0",
 		"@typescript-eslint/parser": "^7.8.0",
 		"@vitest/coverage-v8": "^1.6.0",
@@ -126,5 +126,5 @@
 		}
 	},
 	"gypfile": true,
-	"packageManager": "yarn@4.2.1"
+	"packageManager": "yarn@4.2.2"
 }
