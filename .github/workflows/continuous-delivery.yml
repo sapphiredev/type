@@ -47,12 +47,9 @@ jobs:
           yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
           yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
 
-          yarn bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)"
+          yarn bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)" --skip-changelog
 
-          # Temporarily disable the publishing of packages to npm while testing pack integration
-          echo "Publishing ${TAG}.$(git rev-parse --verify --short HEAD) with @tag ${TAG}"
-          yarn pack --dry-run
-
-          # yarn npm publish --tag ${TAG}
+          yarn npm publish --tag ${TAG}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
