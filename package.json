@@ -61,9 +61,9 @@
 		"@sapphire/eslint-config": "^5.0.5",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^20.14.2",
-		"@typescript-eslint/eslint-plugin": "^7.13.0",
-		"@typescript-eslint/parser": "^7.13.0",
+		"@types/node": "^20.14.8",
+		"@typescript-eslint/eslint-plugin": "^7.13.1",
+		"@typescript-eslint/parser": "^7.13.1",
 		"@vitest/coverage-v8": "^1.6.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.57.0",
@@ -72,9 +72,9 @@
 		"lint-staged": "^15.2.7",
 		"prettier": "^3.3.2",
 		"tsup": "^8.1.0",
-		"typedoc": "^0.25.13",
+		"typedoc": "^0.26.1",
 		"typedoc-json-parser": "^10.0.0",
-		"typescript": "^5.4.5",
+		"typescript": "^5.5.2",
 		"vite": "^5.3.1",
 		"vitest": "^1.6.0"
 	},
@@ -126,5 +126,5 @@
 		}
 	},
 	"gypfile": true,
-	"packageManager": "yarn@4.3.0"
+	"packageManager": "yarn@4.3.1"
 }
