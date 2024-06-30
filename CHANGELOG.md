@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.0](https://github.com/sapphiredev/type/compare/v2.4.4...v2.5.0) - (2024-06-30)
+
+## 📝 Documentation
+
+- **readme:** Fix table of contents ([707e242](https://github.com/sapphiredev/type/commit/707e2427b320b1d1af4a21227db04026f8935203))
+
+## 🚀 Features
+
+- Add node 22 prebuilts ([be5b363](https://github.com/sapphiredev/type/commit/be5b363acc49b702139e292fe452c863a50293e3)) ([#570](https://github.com/sapphiredev/type/pull/570) by @favna)
+
 # [2.4.4](https://github.com/sapphiredev/type/compare/v2.4.4...v2.4.4) - (2024-01-19)
 
 ## 🐛 Bug Fixes
