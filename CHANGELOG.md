@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.5.1](https://github.com/sapphiredev/type/compare/v2.5.0...v2.5.1) - (2024-07-11)
+
+## 🐛 Bug Fixes
+
+- TypeError when requiring discord.js ([06e6afc](https://github.com/sapphiredev/type/commit/06e6afc51d57c759a2ade1feac43554f5bd89967)) ([#573](https://github.com/sapphiredev/type/pull/573) by @favna)
+
 # [2.5.0](https://github.com/sapphiredev/type/compare/v2.4.4...v2.5.0) - (2024-06-30)
 
 ## 📝 Documentation
