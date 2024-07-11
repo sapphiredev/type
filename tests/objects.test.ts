@@ -26,4 +26,9 @@ describe('Objects', () => {
 	test('object(recursive)', () => {
 		expect(new Type({ foo: 'bar', hello: { baz: 'world' } }).toString()).toBe('Record<string, Record<string, string> | string>');
 	});
+
+	test('object(null prototype)', () => {
+		const obj = Object.create(null);
+		expect(new Type(obj).toString()).toBe('Record');
+	});
 });

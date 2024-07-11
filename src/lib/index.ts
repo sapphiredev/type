@@ -140,10 +140,15 @@ export class Type {
 	public static resolve(value: any): string {
 		const type = typeof value;
 		switch (type) {
-			case 'object':
-				return value === null ? 'null' : value.constructor ? value.constructor.name : 'Object';
-			case 'function':
+			case 'object': {
+				if (value === null) return 'null';
+				if (!value.constructor?.name) return 'Object';
+				return value.constructor.name;
+			}
+			case 'function': {
+				if (!value.constructor?.name) return 'Function';
 				return `${value.constructor.name}(${value.length}-arity)`;
+			}
 			case 'undefined':
 				return 'void';
 			default:
