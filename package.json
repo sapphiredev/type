@@ -64,7 +64,7 @@
 		"@types/node": "^20.14.11",
 		"@typescript-eslint/eslint-plugin": "^7.16.1",
 		"@typescript-eslint/parser": "^7.16.1",
-		"@vitest/coverage-v8": "^2.0.3",
+		"@vitest/coverage-v8": "^2.0.4",
 		"cz-conventional-changelog": "^3.3.0",
 		"discord.js": "^14.15.3",
 		"eslint": "^8.57.0",
@@ -72,12 +72,12 @@
 		"eslint-plugin-prettier": "^5.2.1",
 		"lint-staged": "^15.2.7",
 		"prettier": "^3.3.3",
-		"tsup": "^8.2.1",
+		"tsup": "^8.2.2",
 		"typedoc": "^0.26.5",
 		"typedoc-json-parser": "^10.1.5",
 		"typescript": "^5.5.3",
 		"vite": "^5.3.4",
-		"vitest": "^2.0.3"
+		"vitest": "^2.0.4"
 	},
 	"files": [
 		"lib",
