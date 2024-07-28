@@ -806,9 +806,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@favware/cliff-jumper@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "@favware/cliff-jumper@npm:4.0.2"
+"@favware/cliff-jumper@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "@favware/cliff-jumper@npm:4.0.3"
   dependencies:
     "@favware/colorette-spinner": "npm:^1.0.1"
     "@octokit/auth-token": "npm:^5.1.1"
@@ -819,15 +819,15 @@ __metadata:
     colorette: "npm:^2.0.20"
     commander: "npm:^12.1.0"
     conventional-recommended-bump: "npm:^10.0.0"
-    execa: "npm:^9.1.0"
-    git-cliff: "npm:^2.3.0"
+    execa: "npm:^9.3.0"
+    git-cliff: "npm:^2.4.0"
     js-yaml: "npm:^4.1.0"
-    semver: "npm:^7.6.2"
-    smol-toml: "npm:^1.2.1"
+    semver: "npm:^7.6.3"
+    smol-toml: "npm:^1.3.0"
   bin:
     cj: ./dist/cli.js
     cliff-jumper: ./dist/cli.js
-  checksum: 10/70f68e4009f21cea8a8db9c1e766aedda895a0930d15dbc08a86648082098625d661aa64ceae600c2ff35e0dd86a618a046d2e671eb2519d4bc16709a0884b94
+  checksum: 10/c39b331b8ffee92491ecb17e7d797936f6fbc10fe79cfa789e55bb195858a41e1d0401b8d4b84d027ba29f10fe5d73745c7ca0d7b44e38213d45a9f93005e410
   languageName: node
   linkType: hard
 
@@ -1410,12 +1410,12 @@ __metadata:
     "@commitlint/cli": "npm:^19.3.0"
     "@commitlint/config-conventional": "npm:^19.2.2"
     "@discordjs/node-pre-gyp": "npm:^0.4.5"
-    "@favware/cliff-jumper": "npm:^4.0.2"
+    "@favware/cliff-jumper": "npm:^4.0.3"
     "@favware/npm-deprecate": "npm:^1.0.7"
     "@sapphire/eslint-config": "npm:^5.0.5"
     "@sapphire/prettier-config": "npm:^2.0.0"
     "@sapphire/ts-config": "npm:^5.0.1"
-    "@types/node": "npm:^20.14.11"
+    "@types/node": "npm:^20.14.12"
     "@typescript-eslint/eslint-plugin": "npm:^7.16.1"
     "@typescript-eslint/parser": "npm:^7.16.1"
     "@vitest/coverage-v8": "npm:^2.0.4"
@@ -1428,11 +1428,11 @@ __metadata:
     nan: "npm:^2.20.0"
     prettier: "npm:^3.3.3"
     tslib: "npm:^2.6.3"
-    tsup: "npm:^8.2.2"
+    tsup: "npm:^8.2.3"
     typedoc: "npm:^0.26.5"
     typedoc-json-parser: "npm:^10.1.5"
     typescript: "npm:^5.5.3"
-    vite: "npm:^5.3.4"
+    vite: "npm:^5.3.5"
     vitest: "npm:^2.0.4"
   languageName: unknown
   linkType: soft
@@ -1499,12 +1499,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.14.11":
-  version: 20.14.11
-  resolution: "@types/node@npm:20.14.11"
+"@types/node@npm:*, @types/node@npm:^20.14.12":
+  version: 20.14.12
+  resolution: "@types/node@npm:20.14.12"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10/344e1ce1ed16c86ed1c4209ab4d1de67db83dd6b694a6fabe295c47144dde2c58dabddae9f39a0a2bdd246e95f8d141ccfe848e464884b48b8918df4f7788025
+  checksum: 10/9205bf46ef6a99d99cdde9efeb8218cd15803cc407249c2336557cd630b006380dad68c03ee574934414639f8e450044f45530c92788a8e82078bae45ee40f93
   languageName: node
   linkType: hard
 
@@ -3132,7 +3132,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:^9.1.0":
+"execa@npm:^9.3.0":
   version: 9.3.0
   resolution: "execa@npm:9.3.0"
   dependencies:
@@ -3510,7 +3510,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-cliff@npm:^2.3.0":
+"git-cliff@npm:^2.4.0":
   version: 2.4.0
   resolution: "git-cliff@npm:2.4.0"
   dependencies:
@@ -5564,7 +5564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.6.0, semver@npm:^7.6.2":
+"semver@npm:^7.3.5, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.6.0, semver@npm:^7.6.3":
   version: 7.6.3
   resolution: "semver@npm:7.6.3"
   bin:
@@ -5661,7 +5661,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"smol-toml@npm:^1.2.1":
+"smol-toml@npm:^1.3.0":
   version: 1.3.0
   resolution: "smol-toml@npm:1.3.0"
   checksum: 10/dc3e49a9202abca4a60c352ff48c8088a0c48886924b81a0fbab8c66d4575aaa1867f4eac783acea00dcfa34047ccd22634040d2282f9ccb05dc73511c1b0e4e
@@ -6080,9 +6080,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsup@npm:^8.2.2":
-  version: 8.2.2
-  resolution: "tsup@npm:8.2.2"
+"tsup@npm:^8.2.3":
+  version: 8.2.3
+  resolution: "tsup@npm:8.2.3"
   dependencies:
     bundle-require: "npm:^5.0.0"
     cac: "npm:^6.7.14"
@@ -6117,7 +6117,7 @@ __metadata:
   bin:
     tsup: dist/cli-default.js
     tsup-node: dist/cli-node.js
-  checksum: 10/f0d25756d4760d76f0d75118cd222791ad630ae2e89dfc3341d1e2d96b20614d37d1e8a0a541f3a342348cdfb0b24d3df2e2e3ba7590e462630be969803ee6c3
+  checksum: 10/2523611f5879fe408e8cb6d1fbae18d9e7617d2ef47258f6be8c11323c6d5d6aad296f6004d3fa6dc94e5f5b4c70b3eae677ac3d5ce0e9e1e4925715ee8b69b9
   languageName: node
   linkType: hard
 
@@ -6329,9 +6329,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.0.0, vite@npm:^5.3.4":
-  version: 5.3.4
-  resolution: "vite@npm:5.3.4"
+"vite@npm:^5.0.0, vite@npm:^5.3.5":
+  version: 5.3.5
+  resolution: "vite@npm:5.3.5"
   dependencies:
     esbuild: "npm:^0.21.3"
     fsevents: "npm:~2.3.3"
@@ -6365,7 +6365,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/9eadb261be1f5f6335a67cb44a8803febd8b190202909385fd2ae7849991095ee13c5af914da53da48a421ee0901a8fedbb7519dc7d1b8ade3ea6e42bd9b2b39
+  checksum: 10/5672dde4a969349d9cf90a9e43029c8489dfff60fb04d6a10717d6224553cf12283a8cace633fa80b006df6037f72d08a459a38bf8ea66cb19075d60fe159482
   languageName: node
   linkType: hard
 
