@@ -21,3 +21,9 @@ jobs:
     uses: sapphiredev/.github/.github/workflows/reusable-yarn-job.yml@main
     with:
       script-name: docs
+
+  sonar:
+    name: Sonar Analysis
+    uses: sapphiredev/.github/.github/workflows/reusable-sonar.yml@main
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
