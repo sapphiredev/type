@@ -1,4 +1,4 @@
-name: Continuous Integration - Build & Test
+name: CI - Build & Test
 
 on:
   push:
@@ -42,6 +42,13 @@ jobs:
 
       - name: Test Code
         run: yarn vitest run
+
+      - name: SonarCloud Scan
+        if: matrix.os == 'ubuntu-22.04' && matrix.node == 20
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   build_test_musl_x86_64:
     name: Build and Test x86_64(musl)
