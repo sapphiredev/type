@@ -1,7 +1,7 @@
 {
 	"files.eol": "\n",
 	"sonarlint.connectedMode.project": {
-		"connectionId": "https-sonarqube-sapphirejs-dev",
-		"projectKey": "sapphiredev_type_d89b3bdb-9940-4861-b990-d5979692d192"
+		"connectionId": "sapphiredev",
+		"projectKey": "sapphiredev_type"
 	}
 }
