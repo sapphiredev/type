@@ -53,7 +53,7 @@
 	"devDependencies": {
 		"@actions/core": "^1.10.1",
 		"@actions/github": "^6.0.0",
-		"@actions/glob": "^0.4.0",
+		"@actions/glob": "^0.5.0",
 		"@commitlint/cli": "^19.4.0",
 		"@commitlint/config-conventional": "^19.2.2",
 		"@favware/cliff-jumper": "^4.0.3",
@@ -61,7 +61,7 @@
 		"@sapphire/eslint-config": "^5.0.5",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^20.14.15",
+		"@types/node": "^20.15.0",
 		"@typescript-eslint/eslint-plugin": "^7.16.1",
 		"@typescript-eslint/parser": "^7.16.1",
 		"@vitest/coverage-v8": "^2.0.5",
@@ -70,13 +70,13 @@
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-prettier": "^5.2.1",
-		"lint-staged": "^15.2.8",
+		"lint-staged": "^15.2.9",
 		"prettier": "^3.3.3",
 		"tsup": "^8.2.4",
 		"typedoc": "^0.26.5",
 		"typedoc-json-parser": "^10.1.5",
 		"typescript": "^5.5.3",
-		"vite": "^5.4.0",
+		"vite": "^5.4.1",
 		"vitest": "^2.0.5"
 	},
 	"files": [

@@ -27,13 +27,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/glob@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@actions/glob@npm:0.4.0"
+"@actions/glob@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@actions/glob@npm:0.5.0"
   dependencies:
     "@actions/core": "npm:^1.9.1"
     minimatch: "npm:^3.0.4"
-  checksum: 10/cd9dd011c4fd6086c3a2509c4bf72f08cd51e783510d4c69d59d4658f003ad606b239f9d74491996d978ce996fe2b5671416fa98f1321358b1ecd6fbcaf39b44
+  checksum: 10/70f6e3f171e73701738ab0bac88eea6152ee472d299ed1535238eff3f2f735f9928be4803960b84f21e38f2681bf6dd97fa5644f810c8d12d01b111b03285be5
   languageName: node
   linkType: hard
 
@@ -1406,7 +1406,7 @@ __metadata:
   dependencies:
     "@actions/core": "npm:^1.10.1"
     "@actions/github": "npm:^6.0.0"
-    "@actions/glob": "npm:^0.4.0"
+    "@actions/glob": "npm:^0.5.0"
     "@commitlint/cli": "npm:^19.4.0"
     "@commitlint/config-conventional": "npm:^19.2.2"
     "@discordjs/node-pre-gyp": "npm:^0.4.5"
@@ -1415,7 +1415,7 @@ __metadata:
     "@sapphire/eslint-config": "npm:^5.0.5"
     "@sapphire/prettier-config": "npm:^2.0.0"
     "@sapphire/ts-config": "npm:^5.0.1"
-    "@types/node": "npm:^20.14.15"
+    "@types/node": "npm:^20.15.0"
     "@typescript-eslint/eslint-plugin": "npm:^7.16.1"
     "@typescript-eslint/parser": "npm:^7.16.1"
     "@vitest/coverage-v8": "npm:^2.0.5"
@@ -1424,7 +1424,7 @@ __metadata:
     eslint: "npm:^8.57.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-prettier: "npm:^5.2.1"
-    lint-staged: "npm:^15.2.8"
+    lint-staged: "npm:^15.2.9"
     nan: "npm:^2.20.0"
     prettier: "npm:^3.3.3"
     tslib: "npm:^2.6.3"
@@ -1432,7 +1432,7 @@ __metadata:
     typedoc: "npm:^0.26.5"
     typedoc-json-parser: "npm:^10.1.5"
     typescript: "npm:^5.5.3"
-    vite: "npm:^5.4.0"
+    vite: "npm:^5.4.1"
     vitest: "npm:^2.0.5"
   languageName: unknown
   linkType: soft
@@ -1499,12 +1499,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.14.15":
-  version: 20.14.15
-  resolution: "@types/node@npm:20.14.15"
+"@types/node@npm:*, @types/node@npm:^20.15.0":
+  version: 20.15.0
+  resolution: "@types/node@npm:20.15.0"
   dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10/87a4a4313e886c1db1c8042004956095477e040f67df993fd16a2d50488c750bda81e85bf702c2e629e964605034e8dfe0cb91b65ce22b6b8eec37ece61c6b6c
+    undici-types: "npm:~6.13.0"
+  checksum: 10/bec475ee6c54dc575ec4d322753df484af2b96e3afdd3f6f8e594353b3918ca5f420e7c30845225661a14a7522fa421d15294fbf68ed7ae16f4ae7942ca809bd
   languageName: node
   linkType: hard
 
@@ -4290,9 +4290,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^15.2.8":
-  version: 15.2.8
-  resolution: "lint-staged@npm:15.2.8"
+"lint-staged@npm:^15.2.9":
+  version: 15.2.9
+  resolution: "lint-staged@npm:15.2.9"
   dependencies:
     chalk: "npm:~5.3.0"
     commander: "npm:~12.1.0"
@@ -4306,7 +4306,7 @@ __metadata:
     yaml: "npm:~2.5.0"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10/cabeb0540775cafa71d8d55be74b6854f65f083efa43886a5b47bfad36d23bc302c70c67dc952303ffa646e5563cfb92005a5d5ea3944c71f7ee3ff5b7bdcd71
+  checksum: 10/2f7342ca3fc7e2a8a0cc3db79ca8d2ad0269b98b13220f3a6745a514aacf1f83487a23a550569081ea962f9a576af7df8d687a8330a9c3c2c27348d5a4d5440e
   languageName: node
   linkType: hard
 
@@ -5278,7 +5278,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.40":
+"postcss@npm:^8.4.41":
   version: 8.4.41
   resolution: "postcss@npm:8.4.41"
   dependencies:
@@ -6238,10 +6238,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~5.26.4":
-  version: 5.26.5
-  resolution: "undici-types@npm:5.26.5"
-  checksum: 10/0097779d94bc0fd26f0418b3a05472410408877279141ded2bd449167be1aed7ea5b76f756562cb3586a07f251b90799bab22d9019ceba49c037c76445f7cddd
+"undici-types@npm:~6.13.0":
+  version: 6.13.0
+  resolution: "undici-types@npm:6.13.0"
+  checksum: 10/da52e37cbc6da3a75da86fa08dd795ca8924430deb91005eb884b840e46e19013ccd4c1c289f70018e8cf0c338add24a500e7c3acfcd49b1ffb27ff9f91e38b9
   languageName: node
   linkType: hard
 
@@ -6354,13 +6354,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.0.0, vite@npm:^5.4.0":
-  version: 5.4.0
-  resolution: "vite@npm:5.4.0"
+"vite@npm:^5.0.0, vite@npm:^5.4.1":
+  version: 5.4.1
+  resolution: "vite@npm:5.4.1"
   dependencies:
     esbuild: "npm:^0.21.3"
     fsevents: "npm:~2.3.3"
-    postcss: "npm:^8.4.40"
+    postcss: "npm:^8.4.41"
     rollup: "npm:^4.13.0"
   peerDependencies:
     "@types/node": ^18.0.0 || >=20.0.0
@@ -6393,7 +6393,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/5a98b1d30cc8c0263551f417a360102d40b78b9170e9e58a99c1a394ab700c7e604d3c52dafda323c11356a76eba865800d3d8588b33a8febdeaddd5a8981410
+  checksum: 10/1cf22e5a8ec782ea9417a77ad4b16e518f69cf23c99a5af5bb92dc4acbfce70109a35a35faea8fc0789f4637b6304618f6b84e4c5dfe3c9c2875dff7d749b02d
   languageName: node
   linkType: hard
 
