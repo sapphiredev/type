@@ -64,7 +64,7 @@
 		"@types/node": "^22.9.0",
 		"@typescript-eslint/eslint-plugin": "^7.16.1",
 		"@typescript-eslint/parser": "^7.16.1",
-		"@vitest/coverage-v8": "^2.1.4",
+		"@vitest/coverage-v8": "^2.1.5",
 		"cz-conventional-changelog": "^3.3.0",
 		"discord.js": "^14.16.3",
 		"eslint": "^8.57.1",
@@ -76,8 +76,8 @@
 		"typedoc": "^0.26.11",
 		"typedoc-json-parser": "^10.2.0",
 		"typescript": "^5.5.3",
-		"vite": "^5.4.10",
-		"vitest": "^2.1.4"
+		"vite": "^5.4.11",
+		"vitest": "^2.1.5"
 	},
 	"files": [
 		"lib",
