@@ -54,14 +54,14 @@
 		"@actions/core": "^1.11.1",
 		"@actions/github": "^6.0.0",
 		"@actions/glob": "^0.5.0",
-		"@commitlint/cli": "^19.5.0",
-		"@commitlint/config-conventional": "^19.5.0",
+		"@commitlint/cli": "^19.6.0",
+		"@commitlint/config-conventional": "^19.6.0",
 		"@favware/cliff-jumper": "^5.0.0",
 		"@favware/npm-deprecate": "^2.0.0",
 		"@sapphire/eslint-config": "^5.0.5",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^22.9.0",
+		"@types/node": "^22.9.3",
 		"@typescript-eslint/eslint-plugin": "^7.16.1",
 		"@typescript-eslint/parser": "^7.16.1",
 		"@vitest/coverage-v8": "^2.1.5",
@@ -127,5 +127,5 @@
 		}
 	},
 	"gypfile": true,
-	"packageManager": "yarn@4.5.1"
+	"packageManager": "yarn@4.5.2"
 }
