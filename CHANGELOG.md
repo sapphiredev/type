@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+# [2.6.0](https://github.com/sapphiredev/type/compare/v2.5.1...v2.6.0) - (2024-12-14)
+
+## 🐛 Bug Fixes
+
+- Exclude node 23 for ubuntu 20.04 (incompatible) ([8f427f6](https://github.com/sapphiredev/type/commit/8f427f6be0b4871dcd06085c5a0fd56269be8211))
+
+## 🚀 Features
+
+- Add ubuntu 24.04 builds for aarch64 ([eea0e79](https://github.com/sapphiredev/type/commit/eea0e79fe9b6f8e5cbf439c020f7d1a15b6c2e9a))
+- Add node 23 prebuilts ([b633fff](https://github.com/sapphiredev/type/commit/b633fff9f1af2e798f59de298d2fd689021163f5))
+
 # [2.5.1](https://github.com/sapphiredev/type/compare/v2.5.0...v2.5.1) - (2024-07-11)
 
 ## 🐛 Bug Fixes
