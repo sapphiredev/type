@@ -70,13 +70,13 @@
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-prettier": "^5.2.1",
-		"lint-staged": "^15.2.11",
+		"lint-staged": "^15.3.0",
 		"prettier": "^3.4.2",
 		"tsup": "^8.3.5",
 		"typedoc": "^0.26.11",
 		"typedoc-json-parser": "^10.2.0",
 		"typescript": "^5.5.3",
-		"vite": "^6.0.5",
+		"vite": "^6.0.6",
 		"vitest": "^2.1.8"
 	},
 	"files": [
