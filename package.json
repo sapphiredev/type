@@ -71,13 +71,13 @@
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-prettier": "^5.5.4",
-		"lint-staged": "^16.1.6",
+		"lint-staged": "^16.2.1",
 		"prettier": "^3.6.2",
 		"tsup": "^8.5.0",
 		"typedoc": "^0.26.11",
 		"typedoc-json-parser": "^10.2.0",
 		"typescript": "^5.8.3",
-		"vite": "^7.1.6",
+		"vite": "^7.1.7",
 		"vitest": "^3.2.4"
 	},
 	"files": [
@@ -128,5 +128,5 @@
 		}
 	},
 	"gypfile": true,
-	"packageManager": "yarn@4.10.0"
+	"packageManager": "yarn@4.10.3"
 }
