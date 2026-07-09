@@ -184,7 +184,16 @@ jobs:
 
       - name: Setup musl cross compiler
         run: |
-          curl -OLksS --connect-timeout 600 --max-time 600 https://musl.cc/aarch64-linux-musl-cross.tgz
+          curl -4fLksS \
+            --proto '=https' \
+            --proto-redir '=https' \
+            --retry 8 \
+            --retry-delay 5 \
+            --retry-all-errors \
+            --connect-timeout 30 \
+            --max-time 1800 \
+            -o aarch64-linux-musl-cross.tgz \
+            https://musl.cc/aarch64-linux-musl-cross.tgz
           tar -xzvf aarch64-linux-musl-cross.tgz
           $(pwd)/aarch64-linux-musl-cross/bin/aarch64-linux-musl-gcc --version
 
