@@ -10,14 +10,30 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build_x86_64:
-    name: Build x86_64
+  build:
+    name: Build
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-13, macos-14, macos-15, ubuntu-22.04, ubuntu-24.04, windows-2022, windows-2025]
-        node: [18, 19, 20, 21, 22, 23]
+        os:
+          [
+            macos-14,
+            macos-15,
+            macos-15-intel,
+            macos-26,
+            macos-26-intel,
+            ubuntu-22.04,
+            ubuntu-24.04,
+            ubuntu-26.04,
+            ubuntu-24.04-arm,
+            ubuntu-22.04-arm,
+            ubuntu-26.04-arm,
+            windows-2022,
+            windows-2025,
+            windows-2025-VS2026
+          ]
+        node: [18, 19, 20, 21, 22, 23, 24, 25, 26]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -53,7 +69,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 19, 20, 21, 22, 23]
+        node: [18, 19, 20, 21, 22, 23, 24, 25, 26]
     steps:
       - name: Setup env with Node v${{ matrix.node }}
         run: |
@@ -85,8 +101,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-22.04, ubuntu-24.04]
-        node: [18, 19, 20, 21, 22, 23]
+        os: [ubuntu-22.04, ubuntu-24.04, ubuntu-26.04]
+        node: [18, 19, 20, 21, 22, 23, 24, 25, 26]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -128,7 +144,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 19, 20, 21, 22, 23]
+        node: [18, 19, 20, 21, 22, 23, 24, 25, 26]
     steps:
       - name: Setup env with Node v${{ matrix.node }}
         run: |
