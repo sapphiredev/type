@@ -171,7 +171,7 @@ jobs:
       - name: Setup env with Node v${{ matrix.node }}
         run: |
           apk add --update
-          apk add --no-cache ca-certificates git curl build-base python3 g++ make
+          apk add --no-cache ca-certificates git curl build-base python3 g++ github-cli make
 
       - name: Checkout repository
         uses: actions/checkout@v6
