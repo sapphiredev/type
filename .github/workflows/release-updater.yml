@@ -197,7 +197,8 @@ jobs:
             --retry 8 \
             --retry-delay 5 \
             --retry-all-errors \
-            --connect-timeout 30 \
+            --retry-connrefused \
+            --connect-timeout 180 \
             --max-time 1800 \
             -o aarch64-linux-musl-cross.tgz \
             https://musl.cc/aarch64-linux-musl-cross.tgz
