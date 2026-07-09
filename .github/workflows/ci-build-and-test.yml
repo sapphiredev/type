@@ -18,8 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          [
+        os: [
             macos-14,
             macos-15,
             macos-15-intel,
@@ -31,9 +30,10 @@ jobs:
             ubuntu-24.04-arm,
             ubuntu-22.04-arm,
             ubuntu-26.04-arm,
-            windows-2022,
-            windows-2025,
-            windows-2025-VS2026
+            windows-2022
+            # TODO: Windows 2025 images are currently broken and do not have a working Visual Studio version. This is hopefully resolved once https://github.com/actions/runner-images/issues/14225 is out of preview.
+            # windows-2025,
+            # windows-2025-VS2026
           ]
         node: [20, 22, 23, 24, 26]
     steps:
