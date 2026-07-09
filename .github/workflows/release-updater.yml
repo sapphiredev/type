@@ -79,6 +79,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Enable Corepack
+        run: |
+          corepack enable
+          corepack prepare yarn@4.17.1 --activate
+
       - name: Install dependencies
         run: yarn --immutable --mode=skip-build
 
@@ -153,6 +158,11 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v6
+
+      - name: Enable Corepack
+        run: |
+          corepack enable
+          corepack prepare yarn@4.17.1 --activate
 
       - name: Setup musl cross compiler
         run: |
