@@ -51,7 +51,7 @@ jobs:
         if: matrix.os == 'windows-2025' || matrix.os == 'windows-2025-VS2026' || (matrix.os == 'windows-2022' && matrix.node == 26)
         shell: pwsh
         run: |
-          npm config set msvs_version 2022
+          'msvs_version=2022' | Out-File -FilePath "$env:USERPROFILE\.npmrc" -Encoding utf8 -Append
           'GYP_MSVS_VERSION=2022' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
       - name: Work around Node 26 LTO flags on windows-2022
