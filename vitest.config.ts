@@ -2,12 +2,8 @@ import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	test: {
-		pool: 'threads',
-		poolOptions: {
-			threads: {
-				singleThread: true
-			}
-		},
+		pool: 'forks',
+		isolate: true,
 		globals: true,
 		coverage: {
 			enabled: true,
@@ -19,6 +15,6 @@ export default defineConfig({
 		}
 	},
 	esbuild: {
-		target: 'es2021'
+		target: 'es2024'
 	}
 });

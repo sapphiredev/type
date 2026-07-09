@@ -12,14 +12,30 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build_x86_64:
-    name: Build x86_64
+  build:
+    name: Build
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-13, macos-14, macos-15, ubuntu-22.04, ubuntu-24.04, windows-2022, windows-2025]
-        node: [18, 19, 20, 21, 22, 23]
+        os: [
+            macos-14,
+            macos-15,
+            macos-15-intel,
+            macos-26,
+            macos-26-intel,
+            ubuntu-22.04,
+            ubuntu-24.04,
+            ubuntu-26.04,
+            ubuntu-24.04-arm,
+            ubuntu-22.04-arm,
+            ubuntu-26.04-arm,
+            windows-2022
+            # TODO: Windows 2025 images are currently broken and do not have a working Visual Studio version. This is hopefully resolved once https://github.com/actions/runner-images/issues/14225 is out of preview.
+            # windows-2025,
+            # windows-2025-VS2026
+          ]
+        node: [22, 23, 24, 26]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -30,6 +46,23 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: yarn
           registry-url: https://registry.yarnpkg.org/
+
+      - name: Configure node-gyp to use Visual Studio 2022
+        if: matrix.os == 'windows-2025' || matrix.os == 'windows-2025-VS2026' || (matrix.os == 'windows-2022' && matrix.node == 26)
+        shell: pwsh
+        run: |
+          'VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          'VCINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          'GYP_MSVS_OVERRIDE_PATH=C:\Program Files\Microsoft Visual Studio\2022\Enterprise' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          'npm_config_msvs_version=2022' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          'npm_config_gyp_msvs_version=2022' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          'GYP_MSVS_VERSION=2022' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+      - name: Work around Node 26 LTO flags on windows-2022
+        if: matrix.os == 'windows-2022' && matrix.node == 26
+        shell: pwsh
+        run: |
+          'GYP_DEFINES=clang=0' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
       - name: Install dependencies
         run: yarn --immutable --mode=skip-build
@@ -56,7 +89,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 19, 20, 21, 22, 23]
+        node: [22, 23, 24, 26]
     steps:
       - name: Setup env with Node v${{ matrix.node }}
         run: |
@@ -65,6 +98,14 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v6
+
+      - name: Install and enable Corepack
+        run: |
+          if ! command -v corepack >/dev/null 2>&1; then
+            npm install -g corepack --ignore-scripts --force
+          fi
+          corepack enable
+          corepack prepare yarn@4.17.1 --activate
 
       - name: Install dependencies
         run: yarn --immutable --mode=skip-build
@@ -89,8 +130,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-22.04, ubuntu-24.04]
-        node: [18, 19, 20, 21, 22, 23]
+        os: [ubuntu-22.04, ubuntu-24.04, ubuntu-26.04]
+        node: [22, 23, 24, 26]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -133,19 +174,29 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 19, 20, 21, 22, 23]
+        node: [22, 23, 24, 26]
     steps:
       - name: Setup env with Node v${{ matrix.node }}
         run: |
           apk add --update
-          apk add --no-cache ca-certificates git curl build-base python3 g++ make
+          apk add --no-cache ca-certificates git curl build-base python3 g++ github-cli make
 
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Setup musl cross compiler
+      - name: Install and enable Corepack
         run: |
-          curl -OLksS --connect-timeout 600 --max-time 600 https://musl.cc/aarch64-linux-musl-cross.tgz
+          if ! command -v corepack >/dev/null 2>&1; then
+            npm install -g corepack --ignore-scripts --force
+          fi
+          corepack enable
+          corepack prepare yarn@4.17.1 --activate
+
+      - name: Setup musl cross compiler
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download --repo musl-cc/musl.cc --pattern aarch64-linux-musl-cross.tgz
           tar -xzvf aarch64-linux-musl-cross.tgz
           $(pwd)/aarch64-linux-musl-cross/bin/aarch64-linux-musl-gcc --version
 
