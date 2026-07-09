@@ -61,8 +61,12 @@ jobs:
       - name: Work around Node 25 V8 headers on macOS 14
         if: matrix.os == 'macos-14' && matrix.node == 25
         run: |
-          echo 'CXXFLAGS=-std=gnu++20' >> "$GITHUB_ENV"
-          echo 'npm_config_cxxflags=-std=gnu++20' >> "$GITHUB_ENV"
+          echo 'CC=clang' >> "$GITHUB_ENV"
+          echo 'CXX=clang++' >> "$GITHUB_ENV"
+          echo 'CXXFLAGS=-std=gnu++2b' >> "$GITHUB_ENV"
+          echo 'CPPFLAGS=-std=gnu++2b' >> "$GITHUB_ENV"
+          echo 'npm_config_cxxflags=-std=gnu++2b' >> "$GITHUB_ENV"
+          echo 'npm_config_cppflags=-std=gnu++2b' >> "$GITHUB_ENV"
 
       - name: Install dependencies
         run: yarn --immutable --mode=skip-build
