@@ -47,6 +47,13 @@ jobs:
           cache: yarn
           registry-url: https://registry.yarnpkg.org/
 
+      - name: Configure node-gyp to use Visual Studio 2022
+        if: matrix.os == 'windows-2025' || matrix.os == 'windows-2025-VS2026'
+        shell: pwsh
+        run: |
+          npm config set msvs_version 2022
+          'GYP_MSVS_VERSION=2022' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
       - name: Install dependencies
         run: yarn --immutable --mode=skip-build
 
