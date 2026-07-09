@@ -199,18 +199,10 @@ jobs:
           corepack prepare yarn@4.17.1 --activate
 
       - name: Setup musl cross compiler
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          curl -4fLksS \
-            --proto '=https' \
-            --proto-redir '=https' \
-            --retry 8 \
-            --retry-delay 5 \
-            --retry-all-errors \
-            --retry-connrefused \
-            --connect-timeout 180 \
-            --max-time 1800 \
-            -o aarch64-linux-musl-cross.tgz \
-            https://github.com/musl-cc/musl.cc/releases/download/v0.0.1/aarch64-linux-musl-cross.tgz
+          gh release download --repo musl-cc/musl.cc --pattern aarch64-linux-musl-cross.tgz
           tar -xzvf aarch64-linux-musl-cross.tgz
           $(pwd)/aarch64-linux-musl-cross/bin/aarch64-linux-musl-gcc --version
 
