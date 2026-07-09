@@ -82,8 +82,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Enable Corepack
+      - name: Install and enable Corepack
         run: |
+          npm install -g corepack
           corepack enable
           corepack prepare yarn@4.17.1 --activate
 
@@ -164,8 +165,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Enable Corepack
+      - name: Install and enable Corepack
         run: |
+          npm install -g corepack
           corepack enable
           corepack prepare yarn@4.17.1 --activate
 
