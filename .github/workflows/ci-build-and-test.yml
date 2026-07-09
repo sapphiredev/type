@@ -80,7 +80,7 @@ jobs:
 
       - name: Install and enable Corepack
         run: |
-          npm install -g corepack
+          npm install -g corepack --ignore-scripts
           corepack enable
           corepack prepare yarn@4.17.1 --activate
 
@@ -155,7 +155,7 @@ jobs:
 
       - name: Install and enable Corepack
         run: |
-          npm install -g corepack
+          npm install -g corepack --ignore-scripts
           corepack enable
           corepack prepare yarn@4.17.1 --activate
 
