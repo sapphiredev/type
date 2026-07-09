@@ -61,16 +61,6 @@ jobs:
         run: |
           'GYP_DEFINES=clang=0' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
-      - name: Work around Node 25 V8 headers on macOS 14
-        if: matrix.os == 'macos-14' && matrix.node == 25
-        run: |
-          echo 'CC=clang' >> "$GITHUB_ENV"
-          echo 'CXX=clang++' >> "$GITHUB_ENV"
-          echo 'CXXFLAGS=-std=gnu++2b' >> "$GITHUB_ENV"
-          echo 'CPPFLAGS=-std=gnu++2b' >> "$GITHUB_ENV"
-          echo 'npm_config_cxxflags=-std=gnu++2b' >> "$GITHUB_ENV"
-          echo 'npm_config_cppflags=-std=gnu++2b' >> "$GITHUB_ENV"
-
       - name: Install dependencies
         run: yarn --immutable --mode=skip-build
 
