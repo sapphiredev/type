@@ -14,7 +14,6 @@ describe('Objects', () => {
 	});
 
 	test('object(custom)', () => {
-		// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 		class Foo {}
 		expect(new Type(new Foo()).toString()).toBe('Foo');
 	});

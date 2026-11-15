@@ -4,7 +4,6 @@ node_modules/
 .idea/
 *.iml
 coverage/
-docs/
 
 # Yarn files
 .yarn/install-state.gz

@@ -7,7 +7,6 @@ describe('Proxies', () => {
 	});
 
 	test('proxy(function)', () => {
-		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		const proxy = new Proxy(() => {}, {});
 		expect(new Type(proxy).toString()).toBe('Proxy<Function(0-arity)>');
 	});

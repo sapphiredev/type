@@ -20,7 +20,7 @@ describe('Maps', () => {
 	test('map(different-type)', () => {
 		expect(
 			new Type(
-				new Map<string, string | number>([
+				new Map<string, number | string>([
 					['text', 'abc'],
 					['digit', 1]
 				])

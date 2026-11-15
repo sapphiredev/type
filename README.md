@@ -33,8 +33,8 @@ types.
 ## Features
 
 - Written in TypeScript
-- Bundled with Rollup so it can be used in NodeJS and browsers
-- Offers CommonJS, ESM and UMD bundles
+- Bundled for Node.js using tsdown
+- ESM-only
 - Fully tested
 
 ## Installation
@@ -46,8 +46,7 @@ yarn add @sapphire/type
 
 ## Usage
 
-**Note:** While this section uses `require`, the imports match 1:1 with ESM imports. For example
-`const { Type } = require('@sapphire/type')` equals `import { Type } from '@sapphire/type'`.
+**Note:** This package is ESM-only. CommonJS consumers must use a dynamic `import()`.
 
 **Note:** When using ESM syntax you can also default-import `Type` class: `import Type from '@sapphire/type'`.
 
@@ -58,7 +57,7 @@ these are, then you need not be concerned about this.
 
 ```typescript
 // Import the Type class
-const { Type } = require('@sapphire/type');
+import { Type } from '@sapphire/type';
 
 // Define a Type with an array of two numbers
 const type = new Type([1, 2]);

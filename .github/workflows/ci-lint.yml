@@ -1,4 +1,4 @@
-name: Continuous Integration - Lint & Docs
+name: Continuous Integration - Lint
 
 on:
   push:
@@ -14,13 +14,6 @@ jobs:
   linting:
     name: Linting
     uses: sapphiredev/.github/.github/workflows/reusable-lint.yml@main
-
-  docs:
-    name: Docgen
-    if: github.event_name == 'pull_request'
-    uses: sapphiredev/.github/.github/workflows/reusable-yarn-job.yml@main
-    with:
-      script-name: docs
 
   sonar:
     name: Sonar Analysis

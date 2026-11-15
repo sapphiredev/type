@@ -3,6 +3,7 @@ import { getPromiseDetails, getProxyDetails } from '../src/lib/index.js';
 describe('Internals', () => {
 	describe('getPromiseDetails', () => {
 		test('pending', () => {
+			// eslint-disable-next-line promise/prefer-await-to-then
 			const promise = Promise.resolve('pending').then(() => undefined);
 
 			void expect(getPromiseDetails(promise)).toEqual([0]);
@@ -22,6 +23,7 @@ describe('Internals', () => {
 			expect(getPromiseDetails(promise)).toEqual([2, new Error('kaboom')]);
 
 			// Catch the promise, otherwise Node crashes
+			// eslint-disable-next-line promise/prefer-await-to-then
 			promise.catch(() => undefined);
 		});
 	});

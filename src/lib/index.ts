@@ -1,18 +1,6 @@
-// Note that this is in a subfolder within src to mimick that when compiled it will be put in dist/{cjs,esm} which is
-// equally a subfolder within dist. This is to ensure that the import path to the package.json is correct.
+import { getPromiseDetails, getProxyDetails } from '../binding.js';
 
-import nodePreGyp from '@discordjs/node-pre-gyp';
-import { join, resolve } from 'node:path';
-
-declare namespace Internals {
-	export function getPromiseDetails(thing: any): number[];
-	export function getProxyDetails(thing: any): number[];
-}
-
-const bindingPath = nodePreGyp.find(resolve(join(__dirname, '..', '..', './package.json')));
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-export const { getPromiseDetails, getProxyDetails } = require(bindingPath) as typeof Internals;
+export { getPromiseDetails, getProxyDetails } from '../binding.js';
 
 /**
  * The class for deep checking Types
@@ -44,8 +32,8 @@ export class Type {
 	private readonly childValues = new Map<string, Type>();
 
 	/**
-	 * @param value The value to generate a deep Type of
-	 * @param parent The parent value used in recursion
+	 * @param value - The value to generate a deep Type of
+	 * @param parent - The parent value used in recursion
 	 */
 	public constructor(value: unknown, parent: Type | null = null) {
 		this.value = value;
@@ -73,7 +61,7 @@ export class Type {
 	 * Walks the linked list backwards, for checking circulars.
 	 */
 	private *parents(): IterableIterator<Type> {
-		// eslint-disable-next-line @typescript-eslint/no-this-alias, consistent-this
+		// eslint-disable-next-line unicorn/no-this-assignment, @typescript-eslint/no-this-alias, consistent-this
 		let current: Type | null = this;
 		while ((current = current.parent)) yield current;
 	}
@@ -88,7 +76,8 @@ export class Type {
 
 	/**
 	 * The subtype to create based on this.value's sub value.
-	 * @param value The sub value
+	 *
+	 * @param value - The sub value
 	 */
 	private addValue(value: unknown): void {
 		const child = new Type(value, this);
@@ -97,7 +86,8 @@ export class Type {
 
 	/**
 	 * The subtype to create based on this.value's entries.
-	 * @param entry The entry
+	 *
+	 * @param entry - The entry
 	 */
 	private addEntry([key, value]: [string, unknown]): void {
 		const child = new Type(key, this);
@@ -116,9 +106,9 @@ export class Type {
 
 		if (typeof this.value === 'object' && this.isCircular()) {
 			this.is = `[Circular:${this.is}]`;
-		} else if (promise && promise[0]) {
+		} else if (promise?.[0]) {
 			this.addValue(promise[1]);
-		} else if (proxy && proxy[0]) {
+		} else if (proxy?.[0]) {
 			this.is = 'Proxy';
 			this.addValue(proxy[0]);
 		} else if (this.value instanceof Map) {
@@ -135,20 +125,26 @@ export class Type {
 
 	/**
 	 * Resolves the type name that defines the input.
-	 * @param value The value to get the type name of
+	 *
+	 * @param value - The value to get the type name of
 	 */
 	public static resolve(value: any): string {
 		const type = typeof value;
+		// eslint-disable-next-line @typescript-eslint/switch-exhaustiveness-check
 		switch (type) {
 			case 'object': {
 				if (value === null) return 'null';
 				if (!value.constructor?.name) return 'Object';
+
 				return value.constructor.name;
 			}
+
 			case 'function': {
 				if (!value.constructor?.name) return 'Function';
+
 				return `${value.constructor.name}(${value.length}-arity)`;
 			}
+
 			case 'undefined':
 				return 'void';
 			default:
@@ -158,9 +154,12 @@ export class Type {
 
 	/**
 	 * Joins the list of child types.
-	 * @param values The values to list
+	 *
+	 * @param values - The values to list
 	 */
 	private static list(values: Map<string, Type>): string {
+		// Default sorting compares the string representation of each Type.
+		// eslint-disable-next-line @typescript-eslint/require-array-sort-compare
 		return [...values.values()].sort().join(' | ');
 	}
 }

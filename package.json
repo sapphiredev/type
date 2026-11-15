@@ -5,32 +5,24 @@
 	"author": "@sapphire",
 	"license": "MIT",
 	"type": "module",
-	"main": "dist/cjs/index.cjs",
-	"module": "dist/esm/index.mjs",
-	"types": "dist/cjs/index.d.cts",
+	"main": "dist/index.mjs",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.mts",
 	"exports": {
-		"import": {
-			"types": "./dist/esm/index.d.mts",
-			"default": "./dist/esm/index.mjs"
-		},
-		"require": {
-			"types": "./dist/cjs/index.d.cts",
-			"default": "./dist/cjs/index.cjs"
-		}
+		"types": "./dist/index.d.mts",
+		"import": "./dist/index.mjs"
 	},
 	"sideEffects": false,
 	"homepage": "https://github.com/sapphiredev/type",
 	"scripts": {
 		"install": "node-pre-gyp install --fallback-to-build",
-		"build": "yarn gyp:configure && yarn gyp:build && yarn gyp:package && yarn ts:build && yarn ts:build:rename-d-mts",
+		"build": "yarn gyp:configure && yarn gyp:build && yarn gyp:package && yarn ts:build",
 		"clean": "node scripts/clean.mjs",
-		"docs": "typedoc-json-parser",
 		"test": "yarn gyp:configure && yarn gyp:build && vitest run",
 		"lint": "eslint src tests --ext ts --fix",
 		"prettier": "prettier --ignore-path=.prettierignore",
 		"prepack": "yarn build",
-		"ts:build": "tsup",
-		"ts:build:rename-d-mts": "yarn exec mv dist/esm/index.d.ts dist/esm/index.d.mts",
+		"ts:build": "tsdown",
 		"gyp:build-from-source": "node-pre-gyp install --fallback-to-build --build-from-source",
 		"gyp:configure": "node-pre-gyp configure",
 		"gyp:build": "node-pre-gyp build",
@@ -48,37 +40,35 @@
 	},
 	"dependencies": {
 		"@discordjs/node-pre-gyp": "^0.4.5",
-		"nan": "^2.23.1",
-		"tslib": "^2.8.1"
+		"nan": "^2.30.0",
+		"tslib": "^2.9.1"
 	},
 	"devDependencies": {
-		"@actions/core": "^1.11.1",
-		"@actions/github": "^6.0.1",
-		"@actions/glob": "^0.5.0",
-		"@commitlint/cli": "^20.1.0",
-		"@commitlint/config-conventional": "^20.0.0",
-		"@favware/cliff-jumper": "^6.0.0",
+		"@actions/core": "^3.0.1",
+		"@actions/github": "^9.1.1",
+		"@actions/glob": "^0.7.0",
+		"@commitlint/cli": "^21.2.4",
+		"@commitlint/config-conventional": "^21.2.4",
+		"@favware/cliff-jumper": "^6.1.0",
 		"@favware/npm-deprecate": "^2.0.0",
-		"@sapphire/eslint-config": "^5.0.6",
-		"@sapphire/prettier-config": "^2.0.0",
-		"@sapphire/ts-config": "^5.0.1",
-		"@types/node": "^24.10.1",
-		"@typescript-eslint/eslint-plugin": "^7.18.0",
-		"@typescript-eslint/parser": "^7.18.0",
-		"@vitest/coverage-v8": "^3.2.4",
+		"@sapphire/eslint-config": "^6.0.0",
+		"@sapphire/prettier-config": "^3.0.0",
+		"@sapphire/ts-config": "^5.0.3",
+		"@types/node": "^24.19.2",
+		"@typescript-eslint/eslint-plugin": "^8.72.2",
+		"@typescript-eslint/parser": "^8.72.2",
+		"@vitest/coverage-v8": "^5.1.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"discord.js": "^14.24.2",
-		"eslint": "^8.57.1",
+		"discord.js": "^14.28.1",
+		"eslint": "^10.15.0",
 		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-prettier": "^5.5.4",
-		"lint-staged": "^16.2.6",
-		"prettier": "^3.6.2",
-		"tsup": "^8.5.1",
-		"typedoc": "^0.26.11",
-		"typedoc-json-parser": "^10.2.0",
-		"typescript": "^5.8.3",
-		"vite": "^7.2.2",
-		"vitest": "^3.2.4"
+		"eslint-plugin-prettier": "^5.5.7",
+		"lint-staged": "^17.6.0",
+		"prettier": "^3.10.1",
+		"tsdown": "^0.23.7",
+		"typescript": "~6.0.3",
+		"vite": "^8.3.8",
+		"vitest": "^5.1.0"
 	},
 	"files": [
 		"lib",
@@ -120,7 +110,7 @@
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write",
-		"*.{mjs,js,ts}": "eslint --fix --ext mjs,js,ts"
+		"*.{mjs,js,ts}": "eslint --fix"
 	},
 	"config": {
 		"commitizen": {
@@ -128,5 +118,5 @@
 		}
 	},
 	"gypfile": true,
-	"packageManager": "yarn@4.11.0"
+	"packageManager": "yarn@4.18.1"
 }

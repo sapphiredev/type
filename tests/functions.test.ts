@@ -2,7 +2,6 @@ import { Type } from '../src/lib/index.js';
 
 describe('Functions', () => {
 	test('function(empty)', (): void => {
-		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		expect(new Type(() => {}).toString()).toBe('Function(0-arity)');
 	});
 
