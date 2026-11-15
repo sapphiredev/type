@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+# [3.0.0](https://github.com/sapphiredev/type/compare/v2.6.0...v3.0.0) - (2026-11-15)
+
+## 🐛 Bug Fixes
+
+- **deps:** Update all non-major dependencies ([668eef1](https://github.com/sapphiredev/type/commit/668eef1f644b9e5c98dc4ad0a632381a39134201)) ([#689](https://github.com/sapphiredev/type/pull/689) by @renovate[bot])
+- **deps:** Update all non-major dependencies ([52a1570](https://github.com/sapphiredev/type/commit/52a1570d3ebb21cc68325b49b0869f705ed45c85)) ([#662](https://github.com/sapphiredev/type/pull/662) by @renovate[bot])
+- **deps:** Update all non-major dependencies ([0377156](https://github.com/sapphiredev/type/commit/0377156b556250eb4d2ad0beab532962010e7d67)) ([#633](https://github.com/sapphiredev/type/pull/633) by @renovate[bot])
+- **deps:** Update all non-major dependencies ([0289869](https://github.com/sapphiredev/type/commit/028986989405135e0e179daac54e3721290f54eb)) ([#632](https://github.com/sapphiredev/type/pull/632) by @renovate[bot])
+
+## 🚀 Features
+
+- **prebuilts:** Add node 24 and 26 prebuilts and update runners to build on ([8423f26](https://github.com/sapphiredev/type/commit/8423f2621e03718d0ffeb8d4fdc6277488a7a7d3)) ([#707](https://github.com/sapphiredev/type/pull/707) by @favna)
+  - 💥 **BREAKING CHANGE:** prebuilts for Node 18, 19, 20, 21, and 25 are no longer provided, these Node versions are EOL
+
+## 🧪 Testing
+
+- Update test matcher ([c99eed9](https://github.com/sapphiredev/type/commit/c99eed90119d9465d1afcbb8518a9e7bdbca28dd))
+
 # [2.6.0](https://github.com/sapphiredev/type/compare/v2.5.1...v2.6.0) - (2024-12-14)
 
 ## 🐛 Bug Fixes
