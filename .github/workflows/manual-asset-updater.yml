@@ -181,7 +181,7 @@ jobs:
           apk add --no-cache ca-certificates git curl build-base python3 g++ github-cli make
 
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup musl cross compiler
         env:
