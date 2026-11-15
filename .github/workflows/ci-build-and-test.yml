@@ -22,10 +22,10 @@ jobs:
         node: [18, 19, 20, 21, 22, 23]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Use Node.js v${{ matrix.node }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
           cache: yarn
@@ -60,7 +60,7 @@ jobs:
           apk add --no-cache ca-certificates git curl build-base python3 g++ make
 
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Install dependencies
         run: yarn --immutable --mode=skip-build
@@ -85,10 +85,10 @@ jobs:
         node: [18, 19, 20, 21, 22, 23]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Use Node.js v${{ matrix.node }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
           cache: yarn
@@ -129,7 +129,7 @@ jobs:
           apk add --no-cache ca-certificates git curl build-base python3 g++ make
 
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup musl cross compiler
         run: |
